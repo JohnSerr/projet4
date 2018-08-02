@@ -2,8 +2,8 @@
 
 <?php ob_start(); ?>
 
-<?php include("header.php")
-	  include("menu.php")
+<?php include("header.php");
+	  include("menu.php");
 ?>
 
 	<div id="intro">
@@ -18,7 +18,7 @@
 
 
 	<div id="livre">
-		<img src="livre.jpg">
+		<img src="livre.jpg" alt="livre">
 	</div>
 
 
@@ -30,3 +30,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
+<?php require("template.php"); ?>
