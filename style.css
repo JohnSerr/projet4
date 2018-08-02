@@ -6,27 +6,37 @@ body
 	margin: 0
 }
 
+/*header*/
 
 #header
 {
 	position: relative;
 	height: 70px;
-	border-bottom: 1px black solid;
+	border-bottom: 1px grey solid;
 	text-align: center;
-
+	background-color: black;
 
 }
+
+
+#header h1
+{
+	font-size: 2.0em;
+	margin: 0;
+	padding-top: 15px;
+	color: white;
+}
+
 
 #logo1, #logo2
 {
 	position: absolute;
-	background: url(logo.png);
 }
 
 
 #logo1
 {
-	left: 0;
+	left: 5px;
 	top: 0;
 }
 
@@ -34,5 +44,26 @@ body
 
 {
 	top:0;
-	right: 0;
+	right: 5px;
+}
+
+
+
+/*footer*/
+
+
+
+#footer
+{
+	height: 70px;
+	color: white;
+	background-color: black;
+	text-align: center;
+
+}
+
+#footer p
+{
+	margin: 0;
+	padding-top: 25px;
 }
