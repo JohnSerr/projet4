@@ -1,0 +1,38 @@
+/* paramétrage du body */
+
+
+body 
+{
+	margin: 0
+}
+
+
+#header
+{
+	position: relative;
+	height: 70px;
+	border-bottom: 1px black solid;
+	text-align: center;
+
+
+}
+
+#logo1, #logo2
+{
+	position: absolute;
+	background: url(logo.png);
+}
+
+
+#logo1
+{
+	left: 0;
+	top: 0;
+}
+
+#logo2
+
+{
+	top:0;
+	right: 0;
+}
