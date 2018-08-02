@@ -10,8 +10,9 @@
 		
 		<h2>Bienvenue sur mon Blog !</h2>
 		
-		<p>Je m'appelle Jean Rochefort. Auteur dans le domaine de la fantasy !</p>
+		<p>Je m'appelle Jean Forteroche.!</p>
 		<p>Je m'apprête à vous faire partager mon prochain livre, pas à pas via ce site.</p>
+		<p><em>Billet simple pour l'Alaska</em> est son titre</p>
 		<p>Veinard que vous êtes ! Profitez en bien !</p>
 	
 	</div>

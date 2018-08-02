@@ -12,9 +12,8 @@ body
 {
 	position: relative;
 	height: 70px;
-	border-bottom: 1px grey solid;
 	text-align: center;
-	background-color: black;
+	background-color: #0066ff;
 
 }
 
@@ -24,7 +23,7 @@ body
 	font-size: 2.0em;
 	margin: 0;
 	padding-top: 15px;
-	color: white;
+	color: black;
 }
 
 
@@ -36,7 +35,7 @@ body
 
 #logo1
 {
-	left: 5px;
+	left: 0;
 	top: 0;
 }
 
@@ -44,8 +43,46 @@ body
 
 {
 	top:0;
-	right: 5px;
+	right:0;
 }
+
+/*menu*/
+
+
+nav ul 
+{
+	display: flex;
+	list-style: none;
+	justify-content: center;
+	border-bottom: 1px solid grey;
+	padding-bottom: 16px;
+}
+
+nav ul li
+{
+	margin-right: 20px;
+	font-size: 1.5em;
+	font-weight: bolder;
+	
+}
+
+ul li a 
+{
+	text-decoration: none;
+	color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -56,9 +93,10 @@ body
 #footer
 {
 	height: 70px;
-	color: white;
-	background-color: black;
+	color: black;
+	background-color: #0066ff;
 	text-align: center;
+	
 
 }
 
