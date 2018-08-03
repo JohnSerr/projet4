@@ -26,7 +26,7 @@ function getlastPost() {
 	
 	$bdd = dbconnect();
 
-	$reponse = $bdd->query("SELECT * FROM POSTS ORDER BY ID DESC LIMIT 0,1");
+	$reponse = $bdd->query("SELECT * FROM posts ORDER BY ID DESC LIMIT 0,1");
 
 	return $reponse;
 };
@@ -35,7 +35,7 @@ function getPost($postID) {
 
 	$bdd = dbconnect();
 
-	$reponse = $bdd->prepare("SELECT * FROM POSTS WHERE id = ? ");
+	$reponse = $bdd->prepare("SELECT * FROM posts WHERE id = ? ");
 
 	$reponse->execute(array($postID));
 
@@ -56,4 +56,15 @@ function getComments($postID) {
 
 	return $comments;
 
+}
+
+function postComment($postID, $author, $comment) {
+
+	$bdd = dbconnect();
+
+	$comments = $bdd->prepare("INSERT INTO comments(post_ID, author, comment, date_comment) VALUES(?, ?, ?, NOW())");
+
+	$comments->execute(array($postID, $author, $comment));
+
+	return $addCom;
 }

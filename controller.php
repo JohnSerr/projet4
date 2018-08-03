@@ -23,5 +23,20 @@ require("model.php");
 
 }
 
+	function addComment($postID, $author, $comment) {
+
+		$addCom = postComment($postID, $author, $comment);
+
+		if($addCom === false) {
+			die("Ajout impossible !");
+		} else {
+
+			header("Location : index.php?action=post&id=" . $postID);
+
+		}
+
+
+	}
+
 
 ?>

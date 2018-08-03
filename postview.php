@@ -40,6 +40,27 @@ $comments->closeCursor();
 
 ?>
 
+<h4 id="ajout_com">Ajouter un commentaire</h4>
+
+<form action="index.php?action=addComment&amp;id=<?= $post["ID"] ?>" method="post">
+	<div id="pseudo">
+		<label for="author">Pseudonyme : </label>
+		<br/>
+		<input type="text" name="author" id="author">
+	</div>
+
+	<div id="champ_com">
+		<label for="comment">Commentaire : </label>
+		<br/>
+		<textarea name="comment" id="comment"></textarea> 
+	</div>
+
+	<div id="envoyer">
+		<input type="submit" name="envoyer" value="envoyer"> 
+	</div>	
+
+
+
 <?php include("footer.php"); ?>
 <?php $content = ob_get_clean(); ?>
 

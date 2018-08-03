@@ -20,9 +20,32 @@ if (isset($_GET["action"])) {
 		}	
 		
 
-	} 
+	} else if ($_GET["action"] ==="addComment") {
+		
+		if(isset($_GET["id"]) && $_GET["id"] > 0){
+			if(!empty($_POST["author"]) && !empty($_POST["comment"])) {
 
-} else {
+					addComment($_GET["id"], $_POST["author"], $_POST["comment"]);
+
+				} 
+
+				else {
+
+				echo "Erreur : Champ vide !";
+
+				}
+
+			}
+
+			else{
+
+				echo "Erreur : pas d'ID !";
+			}	
+
+
+		} 
+
+}	else {
 
 	welcome();
 }
