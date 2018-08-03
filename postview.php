@@ -27,8 +27,8 @@ while($comment = $comments->fetch()) {
 
 
 	<div id="bloc_com">
-		<p><?= htmlspecialchars($comment["author"]) . " le " . "<em>" . htmlspecialchars($comment["date_comment"]) ."<em>"; ?><p>
-		<p><?= htmlspecialchars($comment["comment"]); ?>	
+		<p><?="<strong>". htmlspecialchars($comment["author"]) . "</strong>". " le " . "<em>" . htmlspecialchars($comment["date_comment"]) . "</em>"; ?><p>
+		<p><?= htmlspecialchars($comment["comment"]); ?></p>	
 	</div>
 
 
@@ -40,7 +40,7 @@ $comments->closeCursor();
 
 ?>
 
-
+<?php include("footer.php"); ?>
 <?php $content = ob_get_clean(); ?>
 
 

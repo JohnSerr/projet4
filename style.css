@@ -6,7 +6,8 @@
 
 body 
 {
-	margin: 0
+	margin: 0;
+	height: 100%;
 }
 
 /*header*/
@@ -166,6 +167,7 @@ ul li a
 	text-align: justify;
 	width: 80%;
 	margin-left: 10%;
+	font-size: 1.3em;
 }
 
 #postinfo
@@ -174,9 +176,11 @@ ul li a
 	background-color: grey;
 }
 
-#postinfo em a:visited 
+#postinfo a
 {
-	text-decoration: none;
+	
+	color: blue;
+
 }
 
 /*footer*/
@@ -185,11 +189,13 @@ ul li a
 
 #footer
 {
+	
 	height: 70px;
 	color: white;
 	background-color: #4d94ff;
 	text-align: center;
 	font-size: 1.2em;
+	
 	
 
 }
@@ -220,6 +226,8 @@ ul li a
 {
 	width: 80%;
 	margin-left:10%;
+	font-size: 1.5em;
+	text-align: justify;
 }
 
 
@@ -231,4 +239,14 @@ ul li a
 	padding: 5px;
 	margin:0;
 	font-size: 2.0em;
+}
+
+#bloc_com
+{
+	background-color: grey;
+	color:white;
+	padding: 10px;
+	font-size: 1.5em;
+	border-bottom: 1px solid white;
+
 }
