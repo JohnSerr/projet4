@@ -36,11 +36,13 @@
 		<h3 id="lastadd">Dernier ajout</h3>
 		<div id="lastpost">
 			<h4><?php echo htmlspecialchars($data["title"]); ?></h4>
-			<em><?php echo $data["time"]; ?></em>
 			<p><?php echo htmlspecialchars($data["text"]); ?></p>
 			</br>
-			<p><?php echo htmlspecialchars($data["author"]); ?></p>
-			<em><a href="#">Commentaires</a></em>
+			<div id="postinfo">
+				<em><?php echo "Ajouté le : " . $data["time"] . " par " . htmlspecialchars($data["author"]); ?></em>
+				</br>
+				<em><a href="#">Commentaires</a></em>
+			</div>
 		</div>
 		
 
