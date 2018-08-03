@@ -128,6 +128,17 @@ ul li a
 	text-align: center;
 }
 
+#lastadd
+{
+	text-align: center;
+	background-color: #4d94ff;
+	color: white;
+	padding: 5px;
+	margin:0;
+	font-size: 1.5em;
+}
+
+
 
 /*footer*/
 

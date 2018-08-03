@@ -1,3 +1,4 @@
+
 <?php $title = "Blog de J.Rochefort"; ?>
 
 <?php ob_start(); ?>
@@ -27,9 +28,21 @@
 
 	</div>
 
-	<div id="lastpost">
-		place réservé pour le dernier post écrit par Jean Forteroch
-	</div>
+		<?php 
+
+		$data = $rep->fetch()
+
+		?>
+		<h3 id="lastadd">Dernier ajout</h3>
+		<div id="lastpost">
+			<h4><?php echo htmlspecialchars($data["title"]); ?></h4>
+			<em><?php echo $data["time"]; ?></em>
+			<p><?php echo htmlspecialchars($data["text"]); ?></p>
+			</br>
+			<p><?php echo htmlspecialchars($data["author"]); ?></p>
+			<em><a href="#">Commentaires</a></em>
+		</div>
+		
 
 <?php include("footer.php"); ?>
 
