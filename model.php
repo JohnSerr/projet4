@@ -46,7 +46,7 @@ function getPost($postID) {
 };
 
 
-function getComments($postiD) {
+function getComments($postID) {
 
 	$bdd = dbconnect();
 

@@ -1,5 +1,5 @@
 
-<?php $title = "Blog de J.Rochefort"; ?>
+<?php $title = "Blog de J.FORTEROCHE"; ?>
 
 <?php ob_start(); ?>
 
@@ -41,7 +41,7 @@
 			<div id="postinfo">
 				<em><?php echo "Ajouté le : " . $data["time"] . " par " . htmlspecialchars($data["author"]); ?></em>
 				</br>
-				<em><a href="post.php">Commentaires</a></em>
+				<em><a href="post.php?id=<?php echo $data["ID"]; ?>">Commentaires</a></em>
 			</div>
 		</div>
 		
