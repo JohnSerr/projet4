@@ -41,7 +41,7 @@
 			<div id="postinfo">
 				<em><?php echo "Ajouté le : " . $data["time"] . " par " . htmlspecialchars($data["author"]); ?></em>
 				</br>
-				<em><a href="post.php?id=<?php echo $data["ID"]; ?>">Commentaires</a></em>
+				<em><a href="post.php?action=post&amp;id=<?php echo $data["ID"]; ?>">Commentaires</a></em>
 			</div>
 		</div>
 		
