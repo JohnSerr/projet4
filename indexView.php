@@ -41,10 +41,11 @@
 			<div id="postinfo">
 				<em><?php echo "Ajouté le : " . $data["time"] . " par " . htmlspecialchars($data["author"]); ?></em>
 				</br>
-				<em><a href="#">Commentaires</a></em>
+				<em><a href="post.php">Commentaires</a></em>
 			</div>
 		</div>
 		
+		<?php $rep->closeCursor(); ?>
 
 <?php include("footer.php"); ?>
 

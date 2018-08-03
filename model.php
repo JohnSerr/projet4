@@ -31,4 +31,29 @@ function getlastPost() {
 	return $reponse;
 };
 
-?>
+function getPost($postID) {
+
+	$bdd = dbconnect();
+
+	$reponse = $bdd->prepare("SELECT * FROM POSTS WHERE id = ? ");
+
+	$reponse->execute(array($postID));
+
+	$post = $reponse->fetch();
+
+	return $post;
+
+};
+
+
+function getComments($postiD) {
+
+	$bdd = dbconnect();
+
+	$comments = $bdd->prepare("SELECT * FROM COMMENTS WHERE post_ID = ? ORDER BY  date_comment DESC");
+
+	$comments->execute(array($postID));
+
+	return $comments;
+
+}
