@@ -1,4 +1,7 @@
-/* paramétrage du body */
+
+/* IndexView.php*/
+
+/* body */
 
 
 body 
@@ -77,6 +80,7 @@ ul li a
 	color: white;
 }
 
+/*content*/
 
 #bandeau
 {
@@ -119,23 +123,10 @@ ul li a
 	text-align: right;
 }
 
-
-
-
 #livre
 {
 	text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 /*footer*/
