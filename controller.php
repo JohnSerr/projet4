@@ -3,6 +3,7 @@
 require("model.php");
 
 
+/* affiche la page d'accueil */
 
 	function welcome() {
 	
@@ -10,6 +11,8 @@ require("model.php");
 
 	require("indexView.php");
 }
+	
+/* affiche un post et ses commentaires */	
 
 	function post() {
 		

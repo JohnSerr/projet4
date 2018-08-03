@@ -1,7 +1,7 @@
 <nav>
 	<ul>
 		<li><a href="index.php">Accueil</a></li>
-		<li><a href="postView.php">Chapitres</a></li>
+		<li><a href="chapitres.php">Chapitres</a></li>
 		<li><a href="contact.php">Contact</a></li>
 	</ul>
 
