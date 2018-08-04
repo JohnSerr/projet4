@@ -1,13 +1,16 @@
 <?php
 
-require("model/model.php");
 
+require_once("model/postManager.php");
+require_once("model/commentManager.php");
 
 /* affiche la page d'accueil */
 
 	function welcome() {
 	
-	$rep = getlastPost();
+	$lastPost = new	PostManager();
+
+	$rep =$lastPost->getlastPost();
 
 	require("view/indexView.php");
 }
@@ -16,8 +19,12 @@ require("model/model.php");
 
 	function post() {
 		
-		$post = getPost($_GET["id"]);
-		$comments = getComments($_GET["id"]);
+
+		$p = new PostManager();
+		$c = new CommentManager();
+
+		$post = $p->getPost($_GET["id"]);
+		$comments = $c-> getComments($_GET["id"]);
 		
 		require("view/postview.php");
 
@@ -25,7 +32,9 @@ require("model/model.php");
 
 	function addComment($postID, $author, $comment) {
 
-		$addCom = postComment($postID, $author, $comment);
+		$com = new CommentManager();
+
+		$addCom =$com->postComment($postID, $author, $comment);
 
 		if($addCom === false) {
 			die("Ajout impossible !");
