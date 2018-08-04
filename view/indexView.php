@@ -23,7 +23,7 @@
 
 
 		<div id="livre">
-			<img src="livre.jpg" alt="livre">
+			<img src="image/livre.jpg" alt="livre">
 		</div>
 
 	</div>

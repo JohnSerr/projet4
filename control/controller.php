@@ -1,6 +1,6 @@
 <?php
 
-require("model.php");
+require("model/model.php");
 
 
 /* affiche la page d'accueil */
@@ -9,7 +9,7 @@ require("model.php");
 	
 	$rep = getlastPost();
 
-	require("indexView.php");
+	require("view/indexView.php");
 }
 	
 /* affiche un post et ses commentaires */	
@@ -19,7 +19,7 @@ require("model.php");
 		$post = getPost($_GET["id"]);
 		$comments = getComments($_GET["id"]);
 		
-		require("postview.php");
+		require("view/postview.php");
 
 }
 

@@ -85,7 +85,7 @@ ul li a
 
 #bandeau
 {
-	background: url(alaska.jpg) no-repeat ;
+	background: url(../image/alaska.jpg) no-repeat ;
 	background-size: cover;
 	width: 100%;
 	height: 500px;
