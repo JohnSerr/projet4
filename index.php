@@ -43,7 +43,9 @@ if (isset($_GET["action"])) {
 			}	
 
 
-		} 
+	} else if ($_GET["action"] === "contact") {
+			contact();
+	} 
 
 }	else {
 

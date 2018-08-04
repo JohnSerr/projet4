@@ -5,7 +5,7 @@ require_once("model/manager.php");
 
 class PostManager extends Manager 
 {
-	function getlastPost() {
+	public function getlastPost() {
 
 	
 	$bdd =$this->dbconnect();
@@ -15,7 +15,7 @@ class PostManager extends Manager
 	return $reponse;
 }
 
-function getPost($postID) {
+ 	public function getPost($postID) {
 
 	$bdd =$this->dbconnect();
 

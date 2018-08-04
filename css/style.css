@@ -259,7 +259,7 @@ ul li a
 	font-weight: bold;
 }
 
-textarea
+#comment
 {
 	width: 300px;
 	height: 300px;
@@ -270,4 +270,56 @@ textarea
 	text-align: center;
 	padding: 20px;
 	background-color: grey;
+}
+
+
+
+
+
+/*------------------------------------------------------------------------------------------ contactView.php ------------------------------------------------------------------------------- */
+
+
+
+#contact
+
+{
+	width: 50%;
+	margin-left: 25%;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	border: black 1px solid;
+	background: grey;
+	border-radius: 5px;
+}
+
+#bloc_nom 
+{
+	margin-top: 10px;
+}
+
+#bloc_nom input, #bloc_mail input, #bloc_message textarea
+{
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+#bloc_message textarea
+{
+
+	height: 500px;
+}
+
+#bouton_contact input
+{
+	margin-bottom: 10px;
+	font-size: 1.2em;
+	background-color: #4d94ff;
+	border-color: #4d94ff;
+	border-radius: 2px;
+	color: white;
 }

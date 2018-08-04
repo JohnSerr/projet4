@@ -5,7 +5,7 @@ require_once("model/manager.php");
 class CommentManager extends Manager
 
 {
-	function getComments($postID) {
+	public function getComments($postID) {
 
 	$bdd =$this->dbconnect();
 
@@ -17,7 +17,7 @@ class CommentManager extends Manager
 
 }
 
-function postComment($postID, $author, $comment) {
+ public function postComment($postID, $author, $comment) {
 
 	$bdd =$this->dbconnect();
 

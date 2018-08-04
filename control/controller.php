@@ -3,6 +3,7 @@
 
 require_once("model/postManager.php");
 require_once("model/commentManager.php");
+/*require_once("model/contactManager.php");*/
 
 /* affiche la page d'accueil */
 
@@ -29,6 +30,8 @@ require_once("model/commentManager.php");
 		require("view/postview.php");
 
 }
+	
+	/* ajoute un commentaire dans la bdd et l'affiche sur le poste concerné */
 
 	function addComment($postID, $author, $comment) {
 
@@ -42,6 +45,31 @@ require_once("model/commentManager.php");
 
 			header("Location : index.php?action=post&id=" . $postID);
 
+		}
+
+
+	}
+
+
+	function contact() {
+
+		require("view/contactView.php");
+
+	}
+
+
+
+ 	/* ajoute le message envoyé à la bdd */
+
+	function sendMessage($nom,$mail,$message) {
+
+		$mess = new contactManager();
+
+		$addnewmess = $mess->postMail($nom,$mail,$message);
+
+		if($addnewmess === false) {
+
+			die("impossible à envoyer");
 		}
 
 
