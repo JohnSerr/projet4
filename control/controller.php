@@ -3,7 +3,7 @@
 
 require_once("model/postManager.php");
 require_once("model/commentManager.php");
-/*require_once("model/contactManager.php");*/
+require_once("model/contactManager.php");
 
 /* affiche la page d'accueil */
 
@@ -44,6 +44,7 @@ require_once("model/commentManager.php");
 		} else {
 
 			header("Location : index.php?action=post&id=" . $postID);
+		
 
 		}
 
@@ -63,7 +64,7 @@ require_once("model/commentManager.php");
 
 	function sendMessage($nom,$mail,$message) {
 
-		$mess = new contactManager();
+		$mess = new ContactManager();
 
 		$addnewmess = $mess->postMail($nom,$mail,$message);
 

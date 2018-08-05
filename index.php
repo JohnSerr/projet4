@@ -44,8 +44,26 @@ if (isset($_GET["action"])) {
 
 
 	} else if ($_GET["action"] === "contact") {
+			
 			contact();
-	} 
+	
+
+	} else if ($_GET["action"] === "sendMessage") {
+		if (!empty($_POST["nom"]) && !empty($_POST["mail"]) && !empty($_POST["message"]))
+			{
+
+				sendMessage($_POST["nom"], $_POST["mail"], $_POST["message"] );
+			} else {
+
+				echo "Erreur: envoie impossible";
+			}
+
+
+	}
+
+
+
+
 
 }	else {
 
