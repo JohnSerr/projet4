@@ -44,7 +44,7 @@ require_once("model/contactManager.php");
 		} else {
 
 			header("Location : index.php?action=post&id=" . $postID);
-		
+
 
 		}
 
@@ -76,5 +76,23 @@ require_once("model/contactManager.php");
 
 	}
 
+	/*Affiche les 5 derniers chapitres sur la page*/
+
+
+	function chapters() {
+
+
+		$chap = new PostManager();
+
+		$chaps = $chap->getPosts();
+
+		require("view/chapterView.php");
+
+
+	
+
+
+
+}
 
 ?>

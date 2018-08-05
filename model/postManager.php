@@ -28,10 +28,16 @@ class PostManager extends Manager
 	return $post;
 
 }
+	public function getPosts() {
+
+	$bdd = $this->dbconnect();
+
+	$chapters = $bdd->query("SELECT * FROM posts ORDER BY ID LIMIT 0,5");
+
+	return $chapters;
 
 
-
-
+	}
 }
 
 ?>
