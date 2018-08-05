@@ -323,3 +323,19 @@ ul li a
 	border-radius: 2px;
 	color: white;
 }
+
+
+
+/*---------------------------------------------------------------- chapterView.php -------------------------------------------------------- */
+
+
+#MaxChapter
+{
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: black;
+	font-weight: bolder;
+	font-size: 1.5em;
+	
+}

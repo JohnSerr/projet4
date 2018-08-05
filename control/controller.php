@@ -86,6 +86,8 @@ require_once("model/contactManager.php");
 
 		$chaps = $chap->getPosts();
 
+		$countTot = $chap->countPosts();
+
 		require("view/chapterView.php");
 
 

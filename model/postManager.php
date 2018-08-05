@@ -38,6 +38,21 @@ class PostManager extends Manager
 
 
 	}
+
+	public function countPosts() {
+
+		$bdd = $this->dbconnect();
+
+		$count = $bdd->query("SELECT COUNT(*) AS nb_chapters FROM posts");
+
+		return $count; 
+
+	}
+
+
+
+
+
 }
 
 ?>

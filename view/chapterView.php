@@ -7,6 +7,14 @@
 	  include("menu.php");
 ?>
 
+<?php $number = $countTot->fetch(); ?>
+
+<div id="MaxChapter">
+	<p> Il y a actuellement <?= $number["nb_chapters"] ?> chapitres publié(s).</p>
+</div>
+
+
+
 <?php 
 
 while($post = $chaps->fetch()) {
