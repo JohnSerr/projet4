@@ -32,7 +32,7 @@ class PostManager extends Manager
 
 	$bdd = $this->dbconnect();
 
-	$chapters = $bdd->query("SELECT * FROM posts ORDER BY ID LIMIT 0,5");
+	$chapters = $bdd->query("SELECT * FROM posts ORDER BY ID LIMIT 0,3");
 
 	return $chapters;
 
