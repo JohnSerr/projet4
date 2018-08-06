@@ -64,7 +64,7 @@ while($post = $chaps->fetch()) {
 $chaps->closeCursor();
 
 ?>
-
+git sta
 <script type="text/javascript" src="js/chapter.js" ></script>
 
 <?php include("footer.php"); ?>
