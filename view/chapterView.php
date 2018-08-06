@@ -10,8 +10,33 @@
 <?php $number = $countTot->fetch(); ?>
 
 <div id="MaxChapter">
-	<p> Il y a actuellement <?= $number["nb_chapters"] ?> chapitres publié(s).</p>
+	<p> Il y a actuellement <?= $number["nb_chapters"] ?> chapitres publié(s). Les trois plus récents sont affichés sur la page.</p>
 </div>
+
+
+
+<div id="selectchapters">
+	<form action="index.php?action=post&amp;id=2" method="post">
+		<label for="chapters">Choississez votre chapitre : </label>
+		<select  name="chapters" id="chapters">
+<?php for($i = 1 ; $i <= $number["nb_chapters"] ; $i++) 
+{
+
+?>	
+		
+		<option id="chap<?php echo $i ?>" class="chap_choosen" value="<?= $i?>"><?= $i ?></option>
+
+<?php
+
+}
+
+?>
+
+		</select>
+		<input type="submit" name="Go" value="Go">
+	</form>
+</div>
+
 
 
 

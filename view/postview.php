@@ -56,7 +56,7 @@ $comments->closeCursor();
 	</div>
 
 	<div id="envoyer">
-		<input type="submit" name="Envoyer" value="Envoyer"> 
+		<input type="submit" value="Envoyer"> 
 	</div>	
 
 
