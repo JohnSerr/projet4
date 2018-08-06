@@ -16,7 +16,7 @@
 
 
 <div id="selectchapters">
-	<form action="index.php?action=post&amp;id=2" method="post">
+	<form action="index.php?action=post&amp;id=1" method="post" id="chapterform" onchange="selectChap()">
 		<label for="chapters">Choississez votre chapitre : </label>
 		<select  name="chapters" id="chapters">
 <?php for($i = 1 ; $i <= $number["nb_chapters"] ; $i++) 
@@ -65,6 +65,7 @@ $chaps->closeCursor();
 
 ?>
 
+<script type="text/javascript" src="js/chapter.js" ></script>
 
 <?php include("footer.php"); ?>
 
