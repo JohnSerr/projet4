@@ -31,6 +31,12 @@ body
 	color: white;
 }
 
+#header h1 a
+{
+	text-decoration: none;
+	color: white;
+}
+
 
 #logo1, #logo2
 {
@@ -207,7 +213,7 @@ ul li a
 }
 
 
-/* ----------------------------------------------------------------------------------------------------- Viewpost.php --------------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------- postView.php --------------------------------------------------------------------------------------------------------------- */
 
 
 
@@ -251,7 +257,16 @@ ul li a
 
 }
 
-#pseudo, #champ_com
+#signaler
+
+{
+	background-color: white;
+	color:blue;
+	border: none;
+	font-size: 0.5em;
+}
+
+#pseudonyme, #champ_com
 {
 	text-align: center;
 	background-color: grey;
@@ -353,4 +368,34 @@ ul li a
 	color: black;
 	font-weight: bolder;
 
+}
+
+
+
+
+/*------------------------------------------------------------- login.php -------------------------------------------------------------------*/
+
+
+
+
+#log
+{
+	height: calc(100vh - 231px);
+	min-height: 250px;
+	text-align: center;
+	font-weight: bolder;
+	background-image: url(../image/login_font.jpg);
+	background-size: cover;
+	color:white;
+	padding-top: 30px;
+}
+
+#bloc_pseudo 
+{
+	margin: 30px;
+}
+
+#pseudo, #password
+{
+	margin: 15px;
 }

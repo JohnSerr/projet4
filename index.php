@@ -63,14 +63,14 @@ if (isset($_GET["action"])) {
 
 		chapters();
 
+	} else if ($_GET["action"] === "login") {
+
+		logform();
+
 	}
 
+} else {
 
-
-
-
-}	else {
-
-	welcome();
-}
+		welcome();
+	}
 

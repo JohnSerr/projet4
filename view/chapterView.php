@@ -38,7 +38,7 @@
 </div>
 
 
-
+<?php $countTot->closeCursor(); ?>
 
 <?php 
 

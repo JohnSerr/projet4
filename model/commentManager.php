@@ -25,7 +25,7 @@ class CommentManager extends Manager
 
 	$comments->execute(array($postID, $author, $comment));
 
-	return $addCom;
+	return $comments;
 }
 
 

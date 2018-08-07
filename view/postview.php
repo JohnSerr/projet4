@@ -27,8 +27,12 @@ while($comment = $comments->fetch()) {
 
 
 	<div id="bloc_com">
-		<p><?="<strong>". htmlspecialchars($comment["author"]) . "</strong>". " le " . "<em>" . htmlspecialchars($comment["date_comment"]) . "</em>"; ?><p>
-		<p><?= htmlspecialchars($comment["comment"]); ?></p>	
+		
+		<p><?="<strong>". htmlspecialchars($comment["author"]) . "</strong>". " le " . "<em>" . htmlspecialchars($comment["date_comment"]) . "</em>"; ?></p>
+		<p><?= htmlspecialchars($comment["comment"]); ?></p>
+		<form action=" method="post">
+				<input type="submit" name="signaler" value="Signaler" id="signaler">
+			</form>	
 	</div>
 
 
@@ -43,7 +47,7 @@ $comments->closeCursor();
 <h4 id="ajout_com">Ajouter un commentaire</h4>
 
 <form action="index.php?action=addComment&amp;id=<?= $post["ID"] ?>" method="post">
-	<div id="pseudo">
+	<div id="pseudonyme">
 		<label for="author">Pseudonyme : </label>
 		<br/>
 		<input type="text" name="author" id="author">

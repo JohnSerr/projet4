@@ -36,14 +36,19 @@ require_once("model/contactManager.php");
 	function addComment($postID, $author, $comment) {
 
 		$com = new CommentManager();
+		
 
-		$addCom =$com->postComment($postID, $author, $comment);
+		$addCom = $com->postComment($postID, $author, $comment);
+
+		
+
 
 		if($addCom === false) {
 			die("Ajout impossible !");
 		} else {
+			
 
-			header("Location : index.php?action=post&id=" . $postID);
+			header("Location: index.php?action=post&id=" . $postID);
 
 
 		}
@@ -93,6 +98,14 @@ require_once("model/contactManager.php");
 
 	
 
+
+
+}
+
+	function logform() {
+
+
+		require("view/logView.php");
 
 
 }
