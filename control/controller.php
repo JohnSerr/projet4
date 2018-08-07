@@ -118,24 +118,24 @@ require_once("model/adminManager.php");
 
 		$log = $l->getLogin();
 
-		if(!$logsdata) {
+		if(!$log) {
 
 			echo "Erreur login/mdp";
 
-		} else if (password_verify($_POST["password"]), $logsdata["pass"])
+		} else if (password_verify($_POST["password"], $logsdata["pass"]))
 
 				session_start();
 
 				$_SESSION["logged"] = true;
 
-				header("Location: index.php?action=admin");
+				
 	}
 
 
 
 	function admin() {
 
-		require("view/adminView.php")
+		require("view/adminView.php");
 
 	}
 
