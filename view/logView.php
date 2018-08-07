@@ -8,7 +8,7 @@
 ?>
 
 <div id="log">
-	<form action="" method="post">
+	<form action="index.php?action=trylogin" method="post">
 		<div id="bloc_pseudo">	
 			<label for="pseudo">Identifiant : </label>
 			<br>

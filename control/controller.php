@@ -4,6 +4,7 @@
 require_once("model/postManager.php");
 require_once("model/commentManager.php");
 require_once("model/contactManager.php");
+require_once("model/adminManager.php");
 
 /* affiche la page d'accueil */
 
@@ -109,5 +110,35 @@ require_once("model/contactManager.php");
 
 
 }
+
+
+	function tryLogin() {
+
+		$l = new AdminManager();
+
+		$log = $l->getLogin();
+
+		if(!$logsdata) {
+
+			echo "Erreur login/mdp";
+
+		} else if (password_verify($_POST["password"]), $logsdata["pass"])
+
+				session_start();
+
+				$_SESSION["logged"] = true;
+
+				header("Location: index.php?action=admin");
+	}
+
+
+
+	function admin() {
+
+		require("view/adminView.php")
+
+	}
+
+
 
 ?>

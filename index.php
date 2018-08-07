@@ -2,6 +2,9 @@
 
 require("control/controller.php");
 
+session_start();
+
+
 if (isset($_GET["action"])) {
 
 	if($_GET["action"] === "welcome") {
@@ -63,9 +66,30 @@ if (isset($_GET["action"])) {
 
 		chapters();
 
-	} else if ($_GET["action"] === "login") {
+	} else if ($_GET["action"] === "loginform") {
 
 		logform();
+
+	} else if ($_GET["action"] === "trylogin") {
+		if(!empty($_POST["pseudo"]) && !empty($_POST["password"])) {
+
+			tryLogin();	
+		} else {
+
+			echo "champ vide";
+		}
+
+	} else if ($_GET["action"] === "admin") {
+		if($_SESSION["logged"]) {
+
+			admin();
+
+		} else {
+
+			logform();
+		}
+
+
 
 	}
 
