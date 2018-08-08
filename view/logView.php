@@ -12,13 +12,13 @@
 		<div id="bloc_pseudo">	
 			<label for="pseudo">Identifiant : </label>
 			<br>
-			<input type="text" name="pseudo" id="pseudo">
+			<input type="text" name="pseudo" id="pseudo" required>
 		</div>
 
 		<div id="bloc_pass">
 			<label for="password">Password : </label>
 			<br>
-			<input type="text" name="password" id="password">
+			<input type="password" name="password" id="password" required>
 		</div>
 		
 		<div id="connec">	

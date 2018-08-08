@@ -6,11 +6,12 @@ class AdminManager extends Manager {
 
 	public function getLogin() {
 
-		$pseudo;
 
 		$bdd = $this->dbconnect();
 
-		$logs = $bdd->prepare("SELECT pass FROM admin WHERE pseudo = :pseudo");
+		$pseudo = $_POST["pseudo"];
+
+		$logs = $bdd->prepare("SELECT pseudo, pass FROM admin WHERE pseudo = :pseudo");
 
 		$logs->execute(array(":pseudo" => $pseudo));
 

@@ -2,7 +2,7 @@
 
 require("control/controller.php");
 
-session_start();
+
 
 
 if (isset($_GET["action"])) {
@@ -67,8 +67,10 @@ if (isset($_GET["action"])) {
 		chapters();
 
 	} else if ($_GET["action"] === "loginform") {
+	session_start();
+	$_SESSION["logged"] = false;
 
-		logform();
+	logform();
 
 	} else if ($_GET["action"] === "trylogin") {
 		if(!empty($_POST["pseudo"]) && !empty($_POST["password"])) {
@@ -80,13 +82,17 @@ if (isset($_GET["action"])) {
 		}
 
 	} else if ($_GET["action"] === "admin") {
+
+		session_start();
+
+
 		if($_SESSION["logged"]) {
 
 			admin();
 
 		} else {
 
-			logform();
+			header("Location: index?action=loginform");
 		}
 
 

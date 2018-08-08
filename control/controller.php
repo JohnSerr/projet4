@@ -120,16 +120,22 @@ require_once("model/adminManager.php");
 
 		if(!$log) {
 
+			echo "Erreur login/mdp";	
+			
+
+		} else if (password_verify($_POST["password"], $log["pass"])) {
+			session_start();
+
+			$_SESSION["logged"] = true;
+
+			header("Location: index.php?action=admin");
+		
+		} else {
+
 			echo "Erreur login/mdp";
-
-		} else if (password_verify($_POST["password"], $logsdata["pass"]))
-
-				session_start();
-
-				$_SESSION["logged"] = true;
-
-				
-	}
+		}
+	
+}	
 
 
 
