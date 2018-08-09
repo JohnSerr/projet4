@@ -102,6 +102,7 @@ require_once("model/adminManager.php");
 
 
 }
+	/*affiche le formualire de login*/
 
 	function logform() {
 
@@ -111,6 +112,7 @@ require_once("model/adminManager.php");
 
 }
 
+/*Verifie la correspondance pseudo/mdp et redirige en fonction*/
 
 	function tryLogin($pseudo) {
 
@@ -137,12 +139,22 @@ require_once("model/adminManager.php");
 	
 }	
 
-
+/* Affiche la page admin.php*/
 
 	function admin() {
 
 		require("view/adminView.php");
 
+	}
+
+
+
+	function addPost($title, $chapt, $author, $textpost) {
+
+		$p = new AdminManager();
+
+
+		$post = $p->createPost($title, $chapt, $author, $textpost);
 	}
 
 

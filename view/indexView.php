@@ -36,7 +36,7 @@
 		<h3 id="lastadd">Dernier ajout</h3>
 		<div id="lastpost">
 			<h4><?php echo htmlspecialchars($data["title"]); ?></h4>
-			<p><?php echo htmlspecialchars($data["text"]); ?></p>
+			<p><?php echo $data["textpost"]; ?></p>
 			</br>
 			<div id="postinfo">
 				<em><?php echo "Ajouté le : " . $data["time"] . " par " . htmlspecialchars($data["author"]); ?></em>

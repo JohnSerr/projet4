@@ -8,7 +8,7 @@
 ?>
 	<div id="post">
 			<h4><?= htmlspecialchars($post["title"]); ?></h4>
-			<p><?= htmlspecialchars($post["text"]); ?></p>
+			<p><?= ($post["textpost"]) ?></p>
 			</br>
 			<div id="postinfo">
 				<em><?= "Ajouté le : " . $post["time"] . " par " . htmlspecialchars($post["author"]); ?></em>

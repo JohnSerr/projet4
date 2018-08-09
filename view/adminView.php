@@ -7,7 +7,40 @@
 	  include("menu.php");
 ?>
 
-<p> En cours de construction </p>
+<h3 id="CMchap">Création/Modification de chapitres</h3>
+
+<div id="billet">
+	<form method="post" action="index.php?action=addPost">
+		
+	<div id="infobillet">
+		<label>Titre du billet : </label>
+		<br>
+		<input type="text" name="title" id="title" >
+		<br>
+		<label>Numéro du chapitre : </label>
+		<br>
+		<input type="number" name="chapt" id="chapt" required>
+		<br>
+		<label>Auteur : </label>
+		<br>
+		<input type="text" name="author" id="author" >
+	</div>	
+
+	<div id="textbillet">
+		
+		<textarea  name="textpost" id="textpost">
+		</textarea>
+
+	</div>
+
+	<div id="soumettre">
+		<input type="submit" name="Ajouter" value="Ajouter">
+		<input type="submit" name="Modifer" value="Modifier">
+	</div>
+
+	
+	</form>
+</div>
 
 
 
@@ -15,4 +48,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require("template.php"); ?>
+<?php require("templateAdmin.php"); ?>

@@ -97,6 +97,17 @@ if (isset($_GET["action"])) {
 
 
 
+	} else if ($_GET["action"] === "addPost") {
+		if (!empty($_POST["title"]) && !empty($_POST["chapt"]) && !empty($_POST["author"])) {
+
+			addPost($_POST["title"], $_POST["chapt"], $_POST["author"], $_POST["textpost"]);
+
+		} else {
+
+			echo "Au moins un champ est vide.";
+		}
+
+
 	}
 
 } else {

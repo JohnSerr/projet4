@@ -18,4 +18,18 @@ class AdminManager extends Manager {
 		return $logsdata ;
 	}
 
-}
+	public function createPost($title, $chapt, $author, $textpost) {
+
+		$bdd = $this->dbconnect();
+
+		$create = $bdd->prepare("INSERT INTO posts(title, chapt, author, time, textpost) VALUES(?, ?, ?, NOW(), ?)");
+
+		$createP = $create->execute(array($title, $chapt, $author, $textpost));
+
+		return $createP;
+
+
+	}
+
+
+} 
