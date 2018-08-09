@@ -112,11 +112,11 @@ require_once("model/adminManager.php");
 }
 
 
-	function tryLogin() {
+	function tryLogin($pseudo) {
 
 		$l = new AdminManager();
 
-		$log = $l->getLogin();
+		$log = $l->getLogin($pseudo);
 
 		if(!$log) {
 

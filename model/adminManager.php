@@ -4,12 +4,10 @@ require_once("model/manager.php");
 
 class AdminManager extends Manager {
 
-	public function getLogin() {
+	public function getLogin($pseudo) {
 
 
 		$bdd = $this->dbconnect();
-
-		$pseudo = $_POST["pseudo"];
 
 		$logs = $bdd->prepare("SELECT pseudo, pass FROM admin WHERE pseudo = :pseudo");
 

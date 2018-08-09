@@ -75,7 +75,7 @@ if (isset($_GET["action"])) {
 	} else if ($_GET["action"] === "trylogin") {
 		if(!empty($_POST["pseudo"]) && !empty($_POST["password"])) {
 
-			tryLogin();	
+			tryLogin($_POST["pseudo"]);	
 		} else {
 
 			echo "champ vide";
