@@ -19,7 +19,7 @@ class PostManager extends Manager
 
 	$bdd =$this->dbconnect();
 
-	$reponse = $bdd->prepare("SELECT * FROM posts WHERE id = ? ");
+	$reponse = $bdd->prepare("SELECT * FROM posts WHERE ID = ? ");
 
 	$reponse->execute(array($postID));
 
@@ -51,6 +51,28 @@ class PostManager extends Manager
 
 
 
+
+	public function selectChapter() {
+
+		$bdd = $this->dbconnect();
+
+		$seChap = $bdd->query("SELECT chapt from posts");
+
+		return $seChap;
+
+	}
+
+	public function convertChap($chapt) {
+
+		$bdd = $this->dbconnect();
+
+		$convertChap = $bdd->prepare("SELECT ID from posts where chapt = :chapt");
+
+		$ID = $convertChap->execute(array(":chapt" => $chapt));
+
+		return $ID;
+
+	}
 
 
 }

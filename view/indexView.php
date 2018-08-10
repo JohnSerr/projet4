@@ -39,7 +39,7 @@
 			<p><?php echo $data["textpost"]; ?></p>
 			</br>
 			<div id="postinfo">
-				<em><?php echo "Ajouté le : " . $data["time"] . " par " . htmlspecialchars($data["author"]); ?></em>
+				<em><?php echo "Ajouté le : " . $data["time"] . " par " . htmlspecialchars($data["author"]) . " " . "#" . $data["ID"]; ?></em>
 				</br>
 				<em><a href="index.php?action=post&amp;id=<?php echo $data["ID"]; ?>">Commentaires</a></em>
 			</div>

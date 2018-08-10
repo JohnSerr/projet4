@@ -13,18 +13,18 @@
 	<p> Il y a actuellement <?= $number["nb_chapters"] ?> chapitres publié(s). Les trois plus récents sont affichés sur la page.</p>
 </div>
 
-
+<?php $countTot->closeCursor(); ?>
 
 <div id="selectchapters">
-	<form action="index.php?action=post&amp;id=1" method="post" id="chapterform" onchange="selectChap()">
+	<form action="index.php?action=convert" method="post" id="chapterform" >
 		<label for="chapters">Choississez votre chapitre : </label>
 		<select  name="chapters" id="chapters">
-<?php for($i = 1 ; $i <= $number["nb_chapters"] ; $i++) 
+<?php while($listChap = $selChap->fetch())
 {
 
 ?>	
 		
-		<option id="chap<?php echo $i ?>" class="chap_choosen" value="<?= $i?>"><?= $i ?></option>
+		<option id="chap<?= $listChap["chapt"] ?>" class="chap_choosen" value="<?=$listChap["chapt"]?>"><?= $listChap["chapt"] ?></option>
 
 <?php
 
@@ -38,7 +38,6 @@
 </div>
 
 
-<?php $countTot->closeCursor(); ?>
 
 <?php 
 
@@ -51,7 +50,7 @@ while($post = $chaps->fetch()) {
 			<p><?= $post["textpost"] ?></p>
 			</br>
 			<div id="postinfo">
-				<em><?= "Ajouté le : " . $post["time"] . " par " . htmlspecialchars($post["author"]); ?></em>
+				<em><?= "Ajouté le : " . $post["time"] . " par " . htmlspecialchars($post["author"])  . " " . "#" . $post["ID"]; ?></em>
 				</br>
 				<em><a href="index.php?action=post&amp;id=<?php echo $post["ID"]; ?>">Commentaires</a></em>
 			</div>
@@ -64,8 +63,7 @@ while($post = $chaps->fetch()) {
 $chaps->closeCursor();
 
 ?>
-git sta
-<script type="text/javascript" src="js/chapter.js" ></script>
+
 
 <?php include("footer.php"); ?>
 

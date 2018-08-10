@@ -66,6 +66,9 @@ if (isset($_GET["action"])) {
 
 		chapters();
 
+	} else if ($_GET["action"] === "convert") {
+		chapId($_POST["chapters"]);
+
 	} else if ($_GET["action"] === "loginform") {
 	session_start();
 	$_SESSION["logged"] = false;
@@ -99,8 +102,15 @@ if (isset($_GET["action"])) {
 
 	} else if ($_GET["action"] === "addPost") {
 		if (!empty($_POST["title"]) && !empty($_POST["chapt"]) && !empty($_POST["author"])) {
-
+				
+				if (!isDoubChap($_POST["chapt"])) {
+			
 			addPost($_POST["title"], $_POST["chapt"], $_POST["author"], $_POST["textpost"]);
+
+			} else {
+
+				echo "Ce chapitre existe déjà !";
+			}
 
 		} else {
 

@@ -94,9 +94,19 @@ require_once("model/adminManager.php");
 
 		$countTot = $chap->countPosts();
 
+		$selChap = $chap->selectChapter();
+
 		require("view/chapterView.php");
 
+}
 
+	function chapId($chapt) {
+
+		$convert = new PostManager();
+
+		$cToID = $convert->convertChap($chapt);
+
+		header("Location: index.php?action=post&id=" . $cToID);
 	
 
 
@@ -148,6 +158,7 @@ require_once("model/adminManager.php");
 	}
 
 
+/*ajoute un chapitre dans la bdd*/
 
 	function addPost($title, $chapt, $author, $textpost) {
 
@@ -157,6 +168,14 @@ require_once("model/adminManager.php");
 		$post = $p->createPost($title, $chapt, $author, $textpost);
 	}
 
+	function isDoubChap($chapt) {
 
+	$cha = new AdminManager();
+
+	$doubChap = $cha->existedChap($chapt);
+
+	return $doubChap;
+	
+	}	
 
 ?>

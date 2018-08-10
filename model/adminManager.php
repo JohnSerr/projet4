@@ -31,5 +31,16 @@ class AdminManager extends Manager {
 
 	}
 
+	public function existedChap ($chapt) {
 
-} 
+		$bdd = $this->dbconnect();
+
+		$chap = $bdd->prepare("SELECT chapt FROM posts WHERE chapt = :chapt");
+
+		$exisChap = $chap->execute(array( ":chapt" => $chapt));
+
+		return $exisChap;
+
+	} 
+
+}

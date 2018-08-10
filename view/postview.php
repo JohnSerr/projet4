@@ -11,7 +11,7 @@
 			<p><?= ($post["textpost"]) ?></p>
 			</br>
 			<div id="postinfo">
-				<em><?= "Ajouté le : " . $post["time"] . " par " . htmlspecialchars($post["author"]); ?></em>
+				<em><?= "Ajouté le : " . $post["time"] . " par " . htmlspecialchars($post["author"])  . " " . "#" . $post["ID"]; ?></em>
 				</br>
 				
 			</div>
