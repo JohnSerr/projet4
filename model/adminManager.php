@@ -26,20 +26,19 @@ class AdminManager extends Manager {
 
 		$createP = $create->execute(array($title, $chapt, $author, $textpost));
 
-		return $createP;
-
-
 	}
 
-	public function existedChap ($chapt) {
+	public function existedChap ($chapter) {
 
 		$bdd = $this->dbconnect();
 
-		$chap = $bdd->prepare("SELECT chapt FROM posts WHERE chapt = :chapt");
+		$chap = $bdd->prepare("SELECT COUNT(*) AS Nb_repeat FROM posts WHERE chapt = :chapter");
 
-		$exisChap = $chap->execute(array( ":chapt" => $chapt));
+		$chap->execute(array(":chapter" => $chapter));
 
-		return $Chap;
+		$repeat = $chap->fetch();
+
+		return $repeat["Nb_repeat"];
 
 	} 
 }

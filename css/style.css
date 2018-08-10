@@ -423,7 +423,15 @@ ul li a
 	font-weight: bolder;
 }
 
-#infobillet input
+
+#postnumber
+{
+	display: none;
+}
+
+
+
+#infobillet input, #fonction select, #infobillet select
 {
 	margin: 10px 0 10px 0;
 }
