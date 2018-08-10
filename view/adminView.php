@@ -24,7 +24,19 @@
 			<label>Numéro du poste à modifier : </label>
 			<br>	
 			<select id="numberID" onchange="">
-				<option>test</option>
+				<?php while($listids = $ids->fetch())
+{
+
+?>	
+		
+		<option id="chap<?= $listids["ID"] ?>"  value="<?=$listids["ID"]?>"><?= $listids["ID"] ?></option>
+
+<?php
+
+}
+
+?>
+
 			</select>
 		</div>
 			<label>Titre du billet : </label>
@@ -55,6 +67,8 @@
 	
 	</form>
 </div>
+
+<h3 id="modo">Modération</h3>
 
 
 <script type="text/javascript" src="js/ajouter_modifier.js"></script>

@@ -41,4 +41,15 @@ class AdminManager extends Manager {
 		return $repeat["Nb_repeat"];
 
 	} 
+
+	public function getAllId() {
+
+		$bdd = $this->dbconnect();
+
+		$allid = $bdd->query("SELECT ID FROM posts");
+
+		return $allid;
+
+	}
+
 }

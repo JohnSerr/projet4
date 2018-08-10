@@ -154,6 +154,10 @@ require_once("model/adminManager.php");
 
 	function admin() {
 
+		$getId = new AdminManager();
+
+		$ids = $getId->getAllId();
+
 		require("view/adminView.php");
 
 	}
