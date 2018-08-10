@@ -39,8 +39,7 @@ class AdminManager extends Manager {
 
 		$exisChap = $chap->execute(array( ":chapt" => $chapt));
 
-		return $exisChap;
+		return $Chap;
 
 	} 
-
 }

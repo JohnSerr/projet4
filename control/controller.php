@@ -106,7 +106,8 @@ require_once("model/adminManager.php");
 
 		$cToID = $convert->convertChap($chapt);
 
-		header("Location: index.php?action=post&id=" . $cToID);
+		header("Location: index.php?action=post&id=" . $cToID["ID"]);
+
 	
 
 

@@ -66,10 +66,10 @@ class PostManager extends Manager
 
 		$bdd = $this->dbconnect();
 
-		$convertChap = $bdd->prepare("SELECT ID from posts where chapt = :chapt");
+		$IDconvert = $bdd->query("SELECT ID from posts where chapt = $chapt");
 
-		$ID = $convertChap->execute(array(":chapt" => $chapt));
-
+		$ID = $IDconvert->fetch();  
+		
 		return $ID;
 
 	}

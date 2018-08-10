@@ -7,7 +7,7 @@
 	  include("menu.php");
 ?>
 
-<h3 id="CMchap">Création/Modification de chapitres</h3>
+<h3 id="CMchap">Création de chapitres</h3>
 
 <div id="billet">
 	<form method="post" action="index.php?action=addPost">
@@ -35,7 +35,6 @@
 
 	<div id="soumettre">
 		<input type="submit" name="Ajouter" value="Ajouter">
-		<input type="submit" name="Modifer" value="Modifier">
 	</div>
 
 	
