@@ -6,7 +6,7 @@
 
 function autofill() {
 
-	var select = document.getElementById("numberID");
+	var select = document.getElementById("number");
 	var selectId = select.options[select.selectedIndex].value
 
 	ajaxGet("index.php?action=autocomplete&id=" + selectId, function(reponse) {

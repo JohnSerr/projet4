@@ -23,7 +23,7 @@
 		<div id="postnumber">
 			<label>Numéro du poste à modifier : </label>
 			<br>	
-			<select id="numberID" onchange="autofill()">
+			<select name="number" id="number" onchange="autofill()">
 				<?php while($listids = $ids->fetch())
 {
 

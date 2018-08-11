@@ -130,6 +130,18 @@ if (isset($_GET["action"])) {
 
 		}
 
+	} else if ($_GET["action"] === "modifyPost") {
+		if (!empty($_POST["title"]) && !empty($_POST["chapter"]) && !empty($_POST["author"]) && !empty($_POST["textpost"])) {
+
+			updateP($_POST["title"], $_POST["chapter"], $_POST["author"], $_POST["textpost"], $_POST["number"]);
+			echo "update !";
+
+		} else {
+
+			echo "Au moins un champ est vide.";
+
+		}
+
 	}
 
 } else {

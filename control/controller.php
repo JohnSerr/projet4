@@ -173,6 +173,8 @@ require_once("model/adminManager.php");
 		$post = $p->createPost($title, $chapt, $author, $textpost);
 	}
 
+/*vérifie et empêche un doublon de chapitre*/
+
 	function isDoubChap($chapt) {
 
 	$cha = new AdminManager();
@@ -182,6 +184,8 @@ require_once("model/adminManager.php");
 	return $doubChap;
 	
 	}	
+
+/* fonction appeler par ajax pour récupérer les data d'autocomplete*/
 
 	function autocomplete($postID) {
 
@@ -193,6 +197,16 @@ require_once("model/adminManager.php");
 	 $infojson = json_encode($infopost, true);
 
 	 return $infojson;
+
+	}
+
+	function updateP($title, $chapt, $author, $textpost, $postID) {
+
+		$update = new AdminManager();
+
+		$pupdate = $update->updatePost($title, $chapt, $author, $textpost, $postID);
+
+
 
 	}
 

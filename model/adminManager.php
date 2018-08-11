@@ -28,6 +28,25 @@ class AdminManager extends Manager {
 
 	}
 
+
+	public function updatePost($title, $chapt, $author, $textpost, $postID) {
+
+		$bdd = $this->dbconnect();
+
+		$update = $bdd->prepare("UPDATE posts SET title = :title, chapt = :chapt, author =:author, textpost = :textpost WHERE ID = $postID");
+
+		$goupdate = $update->execute(array(
+			":title" => $title,
+			":chapt" => $chapt,
+			":author" => $author,
+			":textpost" => $textpost,
+			));
+
+
+
+	}
+
+
 	public function existedChap ($chapter) {
 
 		$bdd = $this->dbconnect();
