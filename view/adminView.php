@@ -29,7 +29,7 @@
 
 ?>	
 		
-		<option id="chap<?= $listids["ID"] ?>"  value="<?=$listids["ID"]?>"><?= $listids["ID"] ?></option>
+		<option value="<?=$listids["ID"]?>"><?= $listids["ID"] ?></option>
 
 <?php
 
@@ -45,7 +45,7 @@
 			<br>
 			<label>Numéro du chapitre : </label>
 			<br>
-			<input type="number" name="chapter" id="chapter" required>
+			<input type="number" name="chapter" id="chapter">
 			<br>
 			<label>Auteur : </label>
 			<br>

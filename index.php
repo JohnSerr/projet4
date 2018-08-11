@@ -101,7 +101,7 @@ if (isset($_GET["action"])) {
 
 
 	} else if ($_GET["action"] === "addPost") {
-		if (!empty($_POST["title"]) && !empty($_POST["chapter"]) && !empty($_POST["author"])) {
+		if (!empty($_POST["title"]) && !empty($_POST["chapter"]) && !empty($_POST["author"]) && !empty($_POST["textpost"])) {
 				if (isDoubChap($_POST["chapter"]) < 1) {
 			
 				addPost($_POST["title"], $_POST["chapter"], $_POST["author"], $_POST["textpost"]);
@@ -116,6 +116,19 @@ if (isset($_GET["action"])) {
 			echo "Au moins un champ est vide.";
 		}
 
+
+	} else if ($_GET["action"] === "autocomplete") {
+		if (isset($_GET["id"]) && $_GET["id"] > 0) 
+
+		{
+
+			autofill($_GET["id"]);
+
+		} else {
+
+			echo "Pas d\'identifiant spécifié.";
+
+		}
 
 	}
 

@@ -82,7 +82,7 @@ require_once("model/adminManager.php");
 
 	}
 
-	/*Affiche les 5 derniers chapitres sur la page*/
+	/*Affiche les 3 derniers chapitres sur la page*/
 
 
 	function chapters() {
@@ -182,5 +182,19 @@ require_once("model/adminManager.php");
 	return $doubChap;
 	
 	}	
+
+	function autocomplete($postID) {
+
+
+	 $p = new PostManager();
+
+	 $infopost = $p->getPost($postID);
+
+	 $infojson = json_encode($infopost);
+
+	 return $infojson;
+
+	}
+
 
 ?>
