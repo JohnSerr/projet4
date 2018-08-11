@@ -190,7 +190,7 @@ require_once("model/adminManager.php");
 
 	 $infopost = $p->getPost($postID);
 
-	 $infojson = json_encode($infopost);
+	 $infojson = json_encode($infopost, true);
 
 	 return $infojson;
 

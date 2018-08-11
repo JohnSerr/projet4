@@ -24,6 +24,11 @@ function choice() {
 
 		updatebutton.style.display = "none";
 
+		document.getElementById("title").setAttribute("value", "");
+		document.getElementById("chapter").setAttribute("value", "");
+		document.getElementById("author").setAttribute("value", "");
+		tinyMCE.get("textpost").setContent("");
+
 
 	} else if (valeur === "choixmodifier") {
 

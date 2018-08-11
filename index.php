@@ -122,7 +122,7 @@ if (isset($_GET["action"])) {
 
 		{
 
-			autofill($_GET["id"]);
+			echo autocomplete($_GET["id"]);
 
 		} else {
 

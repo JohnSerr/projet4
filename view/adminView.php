@@ -23,7 +23,7 @@
 		<div id="postnumber">
 			<label>Numéro du poste à modifier : </label>
 			<br>	
-			<select id="numberID" onchange="">
+			<select id="numberID" onchange="autofill()">
 				<?php while($listids = $ids->fetch())
 {
 
@@ -41,7 +41,7 @@
 		</div>
 			<label>Titre du billet : </label>
 			<br>
-			<input type="text" name="title" id="title" >
+			<input type="text" name="title" id="title">
 			<br>
 			<label>Numéro du chapitre : </label>
 			<br>
@@ -70,8 +70,9 @@
 
 <h3 id="modo">Modération</h3>
 
-
+<script type="text/javascript" src="js/ajax.js"></script>
 <script type="text/javascript" src="js/ajouter_modifier.js"></script>
+<script type="text/javascript" src="js/autofill.js"></script>
 <?php require("footer.php"); ?>
 
 <?php $content = ob_get_clean(); ?>
