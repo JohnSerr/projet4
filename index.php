@@ -142,6 +142,14 @@ if (isset($_GET["action"])) {
 
 		}
 
+	} else if ($_GET["action"] === "deletepost") {
+		if (isset($_POST["deletenumber"]) && $_POST["deletenumber"] > 0) {
+
+			postToDelete($_POST["deletenumber"]);	
+
+		} else
+
+			echo "Pas de numéro d'identification envoyé.";
 	}
 
 } else {

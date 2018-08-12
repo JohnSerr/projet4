@@ -158,6 +158,8 @@ require_once("model/adminManager.php");
 
 		$ids = $getId->getAllId();
 
+		$iddelete = $getId->getAllId();
+
 		require("view/adminView.php");
 
 	}
@@ -205,6 +207,16 @@ require_once("model/adminManager.php");
 		$update = new AdminManager();
 
 		$pupdate = $update->updatePost($title, $chapt, $author, $textpost, $postID);
+
+
+
+	}
+
+	function postToDelete($postID) {
+
+		$del = new AdminManager();
+
+		$thedelpost = $del->deletePost($postID);
 
 
 

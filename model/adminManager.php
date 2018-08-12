@@ -46,6 +46,21 @@ class AdminManager extends Manager {
 
 	}
 
+	public function deletePost($postID) {
+
+
+		$bdd = $this->dbconnect();
+
+
+		$nextdelpost = $bdd->prepare("DELETE FROM posts WHERE ID = :ID");
+
+		$deletedpost = $nextdelpost->execute(array(":ID" => $postID));
+
+
+
+	}
+
+
 
 	public function existedChap ($chapter) {
 

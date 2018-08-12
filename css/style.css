@@ -417,7 +417,7 @@ ul li a
 
 
 
-#billet
+#billet, #delpost
 {
 	text-align: center;
 	font-weight: bolder;
@@ -445,7 +445,7 @@ ul li a
 	
 }
 
-#mceu_28-body
+#mceu_28-body /*menu tinyMCE*/
 {
 	overflow: auto;
 }
@@ -455,7 +455,7 @@ ul li a
 	margin: 10px 0 10px 0;
 }
 
-#modo
+#modo, #deletepost
 {
 	text-align: center;
 	background-color: black;
@@ -464,4 +464,9 @@ ul li a
 	padding: 20px 0 20px 0;
 	margin-top: 50px;
 	margin-bottom: 0px;
+}
+
+#delpost
+{
+	margin: 50px 0 50px 0;
 }

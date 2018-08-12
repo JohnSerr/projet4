@@ -35,6 +35,7 @@
 
 }
 
+
 ?>
 
 			</select>
@@ -68,7 +69,35 @@
 	</form>
 </div>
 
-<h3 id="modo">Modération</h3>
+<h3 id="deletepost">Supprimer un chapitre</h3>
+
+
+<div id="delpost">
+
+	<form id="delete" action="index.php?action=deletepost"  method="post">
+		<label for="deletenumber">Choissisez l'identifiant du chapitre à supprimer : </label>
+		<select name="deletenumber" id="deletenumber" onchange="">
+	<?php 			
+				while($listdelete = $iddelete->fetch())
+	{
+
+	?>	
+		
+		<option value="<?=$listdelete["ID"]?>"><?= $listdelete["ID"] ?></option>
+
+	<?php
+
+	}
+
+	?>
+		</select>
+
+		<input type="submit" name="supprimer" value="Supprimer" id="supprimer" onclick="return confirm('Voulez-vous vraiment supprimer ce billet?');">
+
+	</form>
+
+</div>
+
 
 <script type="text/javascript" src="js/ajax.js"></script>
 <script type="text/javascript" src="js/ajouter_modifier.js"></script>
