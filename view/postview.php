@@ -50,13 +50,13 @@ $comments->closeCursor();
 	<div id="pseudonyme">
 		<label for="author">Pseudonyme : </label>
 		<br/>
-		<input type="text" name="author" id="author">
+		<input type="text" name="author" id="author" required>
 	</div>
 
 	<div id="champ_com">
 		<label for="comment">Commentaire : </label>
 		<br/>
-		<textarea name="comment" id="comment"></textarea> 
+		<textarea name="comment" id="comment" required></textarea> 
 	</div>
 
 	<div id="envoyer">

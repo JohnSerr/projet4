@@ -71,9 +71,14 @@ if (isset($_GET["action"])) {
 
 	} else if ($_GET["action"] === "loginform") {
 	session_start();
-	$_SESSION["logged"] = false;
+			if(isset($_SESSION["logged"]) && $_SESSION["logged"] === true ) {
+				
+				header("Location: index.php?action=admin");
 
-	logform();
+			} else {
+
+				logform();
+			}
 
 	} else if ($_GET["action"] === "trylogin") {
 		if(!empty($_POST["pseudo"]) && !empty($_POST["password"])) {
@@ -89,7 +94,7 @@ if (isset($_GET["action"])) {
 		session_start();
 
 
-		if($_SESSION["logged"]) {
+		if(isset($_SESSION["logged"]) && $_SESSION["logged"] === true ) {
 
 			admin();
 
@@ -101,19 +106,24 @@ if (isset($_GET["action"])) {
 
 
 	} else if ($_GET["action"] === "addPost") {
-		if (!empty($_POST["title"]) && !empty($_POST["chapter"]) && !empty($_POST["author"]) && !empty($_POST["textpost"])) {
+		if (!empty($_POST["title"]) && !empty($_POST["chapter"]) && $_POST["chapter"] > 0 && !empty($_POST["author"]) && !empty($_POST["textpost"])) {
 				if (isDoubChap($_POST["chapter"]) < 1) {
 			
 				addPost($_POST["title"], $_POST["chapter"], $_POST["author"], $_POST["textpost"]);
-				echo " Tout est ok !";
+				echo "Chapitre envoyé !<br> ";
+				echo "<a href=\"index.php?action=admin\">Revenir à l'administration</a>";
+				
 			} else {
 				
-				echo "Ce chapitre existe déjà !";
+				echo "Ce chapitre existe déjà !<br>";
+				echo "<a href=\"index.php?action=admin\">Revenir à l'administration</a>";
+				
 			}
 
 		} else {
 
-			echo "Au moins un champ est vide.";
+			echo "Au moins un champ est vide.<br>";
+			echo "<a href=\"index.php?action=admin\">Revenir à l'administration</a>";
 		}
 
 
@@ -138,7 +148,7 @@ if (isset($_GET["action"])) {
 
 		} else {
 
-			echo "Au moins un champ est vide.";
+			echo "Error : Au moins un champ est vide.";
 
 		}
 
@@ -147,10 +157,50 @@ if (isset($_GET["action"])) {
 
 			postToDelete($_POST["deletenumber"]);	
 
-		} else
+		} else {
 
-			echo "Pas de numéro d'identification envoyé.";
+			echo "Error : Pas de numéro d'identification envoyé.";
+		}
+
+	} else if ($_GET["action"] === "ignorereport") {
+		if(isset($_POST["comID"]) && $_POST["comID"] > 0) {
+
+			igReport($_POST["comID"]);
+
+		} else {
+
+			echo "Error :Pas de numéro d'identification envoyé.";
+
+		}
+	
+
+
+	} else if ($_GET["action"] === "delcom") {
+	 	if(isset($_POST["comID"]) && $_POST["comID"] > 0) {
+
+	 		delCom($_POST["comID"]);
+
+	 	} else {
+
+	 		echo "Error : Pas de numéro d'identification envoyé.";
+
+
+	 	}
+	
+
+
+	} else if ($_GET["action"] === "logout") {
+
+		session_start();
+
+		$_SESSION = array();
+
+		session_destroy();
+
+		header("Location: index.php?action=welcome");
+
 	}
+
 
 } else {
 

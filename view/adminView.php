@@ -92,7 +92,7 @@
 	?>
 		</select>
 
-		<input type="submit" name="supprimer" value="Supprimer" id="supprimer" onclick="return confirm('Voulez-vous vraiment supprimer ce billet?');">
+		<input type="submit" name="deletechapter" value="Supprimer" id="deletechapter" onclick="return confirm('Voulez-vous vraiment supprimer ce billet?');">
 
 	</form>
 
@@ -100,13 +100,13 @@
 
 
 
-<h3 id="modo">Commentaire à modérer</h3>
+<h3 id="modo">Commentaire(s) à modérer</h3>
 
 <?php $comcountr = $countreported->fetch() ?>
 
 <div id="totalreportedcomments">
 
-	<p><?= "Il y a " . $comcountr["nb_reported"] . " commentaire(s) a modérer." ?></p>
+	<p><?= "Il y a " . $comcountr["nb_reported"] . " commentaire(s) à modérer." ?></p>
 
 </div>
 
@@ -123,7 +123,11 @@ while($reported = $allreportedcom->fetch()) {
 		
 		<p><?="<strong>". htmlspecialchars($reported["author"]) . "</strong>". " le " . "<em>" . htmlspecialchars($reported["date_comment"]) . "</em>"; ?></p>
 		<p><?= htmlspecialchars($reported["comment"]); ?></p>
-		
+		<form method="post" action="" id="ignoreordelete">
+		<input type="submit" name="ignorecom" id="ignorecom" value="Ignorer" onclick="ignorCom()">	
+		<input type="submit" name="deletecom" id="deletecom" value="Supprimer" onclick="deleteCom()">
+		<input type="text" name="comID" id="comID" value="<?= $reported["ID"] ?>">	
+		</form>	 
 	</div>
 
 
@@ -135,10 +139,20 @@ $allreportedcom->closeCursor();
 
 ?>
 
+<h3 id="logout">Déconnexion</h3>
+	<div id="logoutform">
+		<form action="index.php?action=logout" method="post">
+		
+			<input type="submit" name="buttonlogout" id="buttonlogout" value="Déconnexion">
+
+		</form>
+	</div>
+
 
 <script type="text/javascript" src="js/ajax.js"></script>
 <script type="text/javascript" src="js/ajouter_modifier.js"></script>
 <script type="text/javascript" src="js/autofill.js"></script>
+<script type="text/javascript" src="js/deleteorignorecom.js"></script>
 <?php require("footer.php"); ?>
 
 <?php $content = ob_get_clean(); ?>

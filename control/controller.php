@@ -99,6 +99,7 @@ require_once("model/adminManager.php");
 		require("view/chapterView.php");
 
 }
+/* fonction de conversion d'un numéro de chapitre en ID de billet*/
 
 	function chapId($chapt) {
 
@@ -206,6 +207,9 @@ require_once("model/adminManager.php");
 
 	}
 
+
+	/*fonction pour modifier un billet*/
+
 	function updateP($title, $chapt, $author, $textpost, $postID) {
 
 		$update = new AdminManager();
@@ -215,6 +219,8 @@ require_once("model/adminManager.php");
 
 
 	}
+
+	/*fonction pour supprimer un billet*/
 
 	function postToDelete($postID) {
 
@@ -226,5 +232,28 @@ require_once("model/adminManager.php");
 
 	}
 
+	/*fonction pour ignorer un signalement de commentaire et remettre la valeur "signaled" de la table comments à 0 */
+
+	function igReport($comID) {
+
+
+		$com = new AdminManager();
+
+		$igncom = $com->ignoreReport($comID);
+
+		header("Location: index.php?action=admin#modo");
+
+	}
+
+	function delCom($comID) {
+
+		$com = new AdminManager();
+
+		$deletecom = $com->ignoreReport($comID);
+
+		header("Location: index.php?action=admin#modo");
+
+	}
+ 
 
 ?>

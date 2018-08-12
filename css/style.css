@@ -462,7 +462,7 @@ ul li a
 }
 
 
-#modo, #deletepost
+#modo, #deletepost 
 {
 	text-align: center;
 	background-color: black;
@@ -476,4 +476,73 @@ ul li a
 #delpost
 {
 	margin: 50px 0 50px 0;
+}
+
+#totalreportedcomments
+{
+	text-align: center;
+	font-weight: bolder;
+	font-size: 1.1em;
+}
+
+
+#comID
+{
+	display: none;
+}
+
+
+#logout
+{
+	text-align: center;
+	background-color: black;
+	color: white;
+	font-size: 1.2em;
+	padding: 20px 0 20px 0;
+	margin-top: 0px;
+}
+
+#logoutform
+{
+	text-align: center;
+	margin: 20px 0 20px 0;
+}
+
+
+@media all and (max-width: 780px) {
+
+	#header h1
+	{
+		font-size: 1.5em;
+	}
+
+	nav ul 
+	{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+
+	#livre
+	{
+		display: none;
+	}
+
+
+
+
+
+}
+
+
+@media all and (max-width: 480px) {
+
+	#logo1, #logo2
+	{
+		display: none;
+	}
+
+
+
 }

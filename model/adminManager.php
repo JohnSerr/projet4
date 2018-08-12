@@ -112,6 +112,25 @@ class AdminManager extends Manager {
 
 	}
 
+	public function ignoreReport($comID) {
+
+		$bdd = $this->dbconnect();
+
+		$igcom = $bdd->prepare("UPDATE comments SET signaled = 0 WHERE ID = :ID");
+
+		$igncom = $igcom->execute(array(":ID" => $comID));
+
+	}
+
+	public function deleteComment($comID) {
+
+		$bdd = $this->dbconnect();
+
+		$nextdelcom = $bdd->prepare("DELETE FROM comments WHERE ID = :ID");
+
+		$deletedcom = $nextdelpost->execute(array(":ID" => $comID));
+
+	}
 
 
 }
