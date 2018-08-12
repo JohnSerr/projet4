@@ -99,6 +99,43 @@
 </div>
 
 
+
+<h3 id="modo">Commentaire à modérer</h3>
+
+<?php $comcountr = $countreported->fetch() ?>
+
+<div id="totalreportedcomments">
+
+	<p><?= "Il y a " . $comcountr["nb_reported"] . " commentaire(s) a modérer." ?></p>
+
+</div>
+
+
+
+<?php
+
+while($reported = $allreportedcom->fetch()) {
+
+?>
+
+
+	<div id="bloc_com">
+		
+		<p><?="<strong>". htmlspecialchars($reported["author"]) . "</strong>". " le " . "<em>" . htmlspecialchars($reported["date_comment"]) . "</em>"; ?></p>
+		<p><?= htmlspecialchars($reported["comment"]); ?></p>
+		
+	</div>
+
+
+<?php
+
+}
+
+$allreportedcom->closeCursor();
+
+?>
+
+
 <script type="text/javascript" src="js/ajax.js"></script>
 <script type="text/javascript" src="js/ajouter_modifier.js"></script>
 <script type="text/javascript" src="js/autofill.js"></script>

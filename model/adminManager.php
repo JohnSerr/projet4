@@ -86,4 +86,32 @@ class AdminManager extends Manager {
 
 	}
 
+
+	public function countReportedCom() {
+
+		$bdd = $this->dbconnect();
+
+		$totalreported = $bdd->query("SELECT COUNT(*) AS nb_reported FROM comments WHERE signaled = 1");
+
+		return $totalreported;
+	}
+
+
+
+
+
+	public function getReportedCom() {
+
+
+		$bdd = $this->dbconnect();
+
+		$reportedcoms = $bdd->query("SELECT * FROM comments WHERE signaled = 1");
+
+		return $reportedcoms;
+
+
+	}
+
+
+
 }

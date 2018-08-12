@@ -154,11 +154,15 @@ require_once("model/adminManager.php");
 
 	function admin() {
 
-		$getId = new AdminManager();
+		$getdata = new AdminManager();
 
-		$ids = $getId->getAllId();
+		$ids = $getdata->getAllId(); /*Liste de poste à modifier*/
 
-		$iddelete = $getId->getAllId();
+		$iddelete = $getdata->getAllId(); /*Lise de poste à supprimer*/
+
+		$countreported = $getdata->countReportedCom();
+
+		$allreportedcom =  $getdata->getReportedCom();
 
 		require("view/adminView.php");
 
