@@ -2,9 +2,9 @@
 
 require_once("model/manager.php");
 
-class CommentManager extends Manager
+class CommentManager extends Manager {
+	
 
-{
 	public function getComments($postID) {
 
 	$bdd =$this->dbconnect();
@@ -15,18 +15,33 @@ class CommentManager extends Manager
 
 	return $comments;
 
-}
+	}
 
- public function postComment($postID, $author, $comment) {
+ 	
 
-	$bdd =$this->dbconnect();
+ 	public function postComment($postID, $author, $comment) {
 
-	$comments = $bdd->prepare("INSERT INTO comments(post_ID, author, comment, date_comment) VALUES(?, ?, ?, NOW())");
+		$bdd =$this->dbconnect();
 
-	$comments->execute(array($postID, $author, $comment));
+		$comments = $bdd->prepare("INSERT INTO comments(post_ID, author, comment, date_comment) VALUES(?, ?, ?, NOW())");
 
-	return $comments;
-}
+		$comments->execute(array($postID, $author, $comment));
+
+		return $comments;
+	}	
+
+
+	public function reportCom($comID) {
+
+		$bdd = $this->dbconnect();
+
+		$com = $bdd->prepare("UPDATE comments SET signaled = 1 WHERE ID = :ID");
+
+		$report = $com->execute(array(":ID" => $comID));
+
+
+
+	}
 
 
 

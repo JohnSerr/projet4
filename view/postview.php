@@ -25,12 +25,16 @@ while($comment = $comments->fetch()) {
 
 ?>
 
-
+	<div id="<?= "path" . $comment["ID"]?>"</div>
 	<div id="bloc_com">
-		
+
 		<p><?="<strong>". htmlspecialchars($comment["author"]) . "</strong>". " le " . "<em>" . htmlspecialchars($comment["date_comment"]) . "</em>"; ?></p>
 		<p><?= htmlspecialchars($comment["comment"]); ?></p>
-		<form action=" method="post">
+			
+			<form action="index.php?action=report&amp;id=<?= $post["ID"]?>" method="post" onsubmit="alert('Commentaire signalé !')">
+				
+				<input type="text" name="comID" id="comID" value="<?= $comment["ID"] ?>">
+				
 				<input type="submit" name="signaler" value="Signaler" id="signaler">
 			</form>	
 	</div>
@@ -60,7 +64,7 @@ $comments->closeCursor();
 	</div>
 
 	<div id="envoyer">
-		<input type="submit" value="Envoyer"> 
+		<input type="submit" value="Envoyer" > 
 	</div>	
 
 

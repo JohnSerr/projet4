@@ -31,6 +31,19 @@ require_once("model/adminManager.php");
 		require("view/postview.php");
 
 }
+	/*signal un commentaire et l'envoie à la modération*/
+
+	function reportC($comID) {
+
+		$repc = new CommentManager();
+
+		$repcom = $repc->reportCom($comID);
+
+		header("Location: index.php?action=post&id=" . $_GET["id"] . "#" . "path" . $comID );
+}
+	
+
+
 	
 	/* ajoute un commentaire dans la bdd et l'affiche sur le poste concerné */
 
@@ -55,14 +68,14 @@ require_once("model/adminManager.php");
 		}
 
 
-	}
+}
 
 
 	function contact() {
 
 		require("view/contactView.php");
 
-	}
+}
 
 
 
@@ -80,7 +93,7 @@ require_once("model/adminManager.php");
 		}
 
 
-	}
+}
 
 	/*Affiche les 3 derniers chapitres sur la page*/
 

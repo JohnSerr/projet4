@@ -23,6 +23,21 @@ if (isset($_GET["action"])) {
 		}	
 		
 
+	
+
+
+	} else if ($_GET["action"] === "report") {
+		
+		if(isset($_POST["comID"]) && ($_POST["comID"]) > 0 && isset($_GET["id"]) && $_GET["id"] > 0) {
+
+				reportC($_POST["comID"]);
+
+		} else {
+
+			echo "Error : le numéro de commentaire n'est pas connu";
+
+		}
+
 	} else if ($_GET["action"] ==="addComment") {
 		
 		if(isset($_GET["id"]) && $_GET["id"] > 0){
