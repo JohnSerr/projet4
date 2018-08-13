@@ -37,10 +37,10 @@
 		<div id="lastpost">
 			<h4><?php echo htmlspecialchars($data["title"]); ?></h4>
 			<p><?php echo $data["textpost"]; ?></p>
-			</br>
+			<br>
 			<div class="postinfo">
 				<em><?php echo "Ajouté le : " . $data["time"] . " par " . htmlspecialchars($data["author"]) . " " . "#" . $data["ID"]; ?></em>
-				</br>
+				<br>
 				<em><a href="index.php?action=post&amp;id=<?php echo $data["ID"]; ?>">Commentaires</a></em>
 			</div>
 		</div>

@@ -9,9 +9,9 @@ class CommentManager extends Manager {
 
 	$bdd =$this->dbconnect();
 
-	$comments = $bdd->prepare("SELECT * FROM COMMENTS WHERE post_ID = ? ORDER BY  date_comment DESC");
+	$comments = $bdd->prepare("SELECT * FROM comments WHERE post_ID = :post_ID ORDER BY  date_comment DESC");
 
-	$comments->execute(array($postID));
+	$comments->execute(array(":post_ID" => $postID));
 
 	return $comments;
 

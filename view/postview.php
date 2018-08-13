@@ -18,7 +18,7 @@
 	</div>
 
 	<h4 id="comments">Commentaires</h4>
-<p>test2</p>
+
 <?php
 
 while($comment = $comments->fetch()) 
