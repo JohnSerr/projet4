@@ -6,11 +6,11 @@
 <?php	include("header.php");
 		include("menu.php");
 ?>
-	<div id="post">
+	<div class="post">
 			<h4><?= htmlspecialchars($post["title"]); ?></h4>
 			<p><?= ($post["textpost"]) ?></p>
 			</br>
-			<div id="postinfo">
+			<div class="postinfo">
 				<em><?= "Ajouté le : " . $post["time"] . " par " . htmlspecialchars($post["author"])  . " " . "#" . $post["ID"]; ?></em>
 				</br>
 				
@@ -18,22 +18,24 @@
 	</div>
 
 	<h4 id="comments">Commentaires</h4>
-
+<p>test2</p>
 <?php
 
-while($comment = $comments->fetch()) {
+while($comment = $comments->fetch()) 
+
+{
 
 ?>
-
+	
 	<div id="<?= "path" . $comment["ID"]?>"></div>
-	<div id="bloc_com">
+	<div class="bloc_com">
 
 		<p><?="<strong>". htmlspecialchars($comment["author"]) . "</strong>". " le " . "<em>" . htmlspecialchars($comment["date_comment"]) . "</em>"; ?></p>
 		<p><?= htmlspecialchars($comment["comment"]); ?></p>
 			
 			<form action="index.php?action=report&amp;id=<?= $post["ID"]?>" method="post" onsubmit="alert('Commentaire signalé !')">
 				
-				<input type="text" name="comID" id="comID" value="<?= $comment["ID"] ?>">
+				<input type="text" name="comID" class="comID" value="<?= $comment["ID"] ?>">
 				
 				<input type="submit" name="signaler" value="Signaler" id="signaler">
 			</form>	
@@ -44,7 +46,7 @@ while($comment = $comments->fetch()) {
 
 }
 
-$comments->closeCursor();
+
 
 ?>
 
@@ -54,7 +56,7 @@ $comments->closeCursor();
 	<div id="pseudonyme">
 		<label for="author">Pseudonyme : </label>
 		<br/>
-		<input type="text" name="author" id="author" required>
+		<input type="text" name="author" required>
 	</div>
 
 	<div id="champ_com">

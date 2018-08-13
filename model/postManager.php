@@ -25,6 +25,8 @@ class PostManager extends Manager
 
 	$post = $reponse->fetch();
 
+	$reponse->closeCursor();
+
 	return $post;
 
 }
