@@ -25,7 +25,7 @@ while($comment = $comments->fetch()) {
 
 ?>
 
-	<div id="<?= "path" . $comment["ID"]?>"</div>
+	<div id="<?= "path" . $comment["ID"]?>"></div>
 	<div id="bloc_com">
 
 		<p><?="<strong>". htmlspecialchars($comment["author"]) . "</strong>". " le " . "<em>" . htmlspecialchars($comment["date_comment"]) . "</em>"; ?></p>
