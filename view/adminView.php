@@ -119,14 +119,14 @@ while($reported = $allreportedcom->fetch()) {
 ?>
 
 
-	<div id="bloc_com">
+	<div class="bloc_com">
 		
 		<p><?="<strong>". htmlspecialchars($reported["author"]) . "</strong>". " le " . "<em>" . htmlspecialchars($reported["date_comment"]) . "</em>"; ?></p>
 		<p><?= htmlspecialchars($reported["comment"]); ?></p>
 		<form method="post" action="" id="ignoreordelete">
-		<input type="submit" name="ignorecom" id="ignorecom" value="Ignorer" onclick="ignorCom()">	
-		<input type="submit" name="deletecom" id="deletecom" value="Supprimer" onclick="deleteCom()">
-		<input type="text" name="comID" id="comID" value="<?= $reported["ID"] ?>">	
+		<input type="submit" name="ignorecom" class="ignorecom" value="Ignorer" onclick="ignorCom()">	
+		<input type="submit" name="deletecom" class="deletecom" value="Supprimer" onclick="deleteCom()">
+		<input type="text" name="comID" class="comID" value="<?= $reported["ID"] ?>">	
 		</form>	 
 	</div>
 
