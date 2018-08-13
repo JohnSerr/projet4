@@ -159,8 +159,8 @@ if (isset($_GET["action"])) {
 		if (!empty($_POST["title"]) && !empty($_POST["chapter"]) && !empty($_POST["author"]) && !empty($_POST["textpost"])) {
 
 			updateP($_POST["title"], $_POST["chapter"], $_POST["author"], $_POST["textpost"], $_POST["number"]);
-			echo "update !";
-
+			echo "Chapitre mis à jour !";
+			echo "<a href=\"index.php?action=admin\">Revenir à l'administration</a>";
 		} else {
 
 			echo "Error : Au moins un champ est vide.";
