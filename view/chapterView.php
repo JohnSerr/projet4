@@ -48,10 +48,10 @@ while($post = $chaps->fetch()) {
 <div class="post">
 			<h4><?= htmlspecialchars($post["title"]); ?></h4>
 			<p><?= $post["textpost"] ?></p>
-			</br>
+			<br>
 			<div class="postinfo">
 				<em><?= "Ajouté le : " . $post["time"] . " par " . htmlspecialchars($post["author"])  . " " . "#" . $post["ID"]; ?></em>
-				</br>
+				<br>
 				<em><a href="index.php?action=post&amp;id=<?php echo $post["ID"]; ?>">Commentaires</a></em>
 			</div>
 	</div>
