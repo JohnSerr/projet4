@@ -143,7 +143,7 @@ if (isset($_GET["action"])) {
 		if (!empty($_POST["title"]) && !empty($_POST["chapter"]) && !empty($_POST["author"]) && !empty($_POST["textpost"])) {
 
 			updateP($_POST["title"], $_POST["chapter"], $_POST["author"], $_POST["textpost"], $_POST["number"]);
-			echo "Chapitre mis à jour !";
+			echo "Chapitre mis à jour ! <br>";
 			echo "<a href=\"index.php?action=admin\">Revenir à l'administration</a>";
 		} else {
 
@@ -176,6 +176,9 @@ if (isset($_GET["action"])) {
 	 	if(isset($_POST["comID"]) && $_POST["comID"] > 0) {
 
 	 		delCom($_POST["comID"]);
+	 		echo "Chapitre supprimé ! <br>";
+			echo "<a href=\"index.php?action=admin\">Revenir à l'administration</a>";
+
 
 	 	} else {
 
