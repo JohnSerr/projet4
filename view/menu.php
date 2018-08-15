@@ -4,6 +4,4 @@
 		<li><a href="index.php?action=chapters">Chapitres</a></li>
 		<li><a href="index.php?action=contact">Contact</a></li>
 	</ul>
-
-
 </nav>

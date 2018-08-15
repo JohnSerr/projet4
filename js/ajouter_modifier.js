@@ -12,37 +12,29 @@ function choice() {
 	
 	var updatebutton = document.getElementById("modifier");
 
-	
-
-	if ( valeur === "choixajouter") {
+		if ( valeur === "choixajouter") {
 		
-		form.setAttribute("action", "index.php?action=addPost");
+			form.setAttribute("action", "index.php?action=addPost");
 		
-		selectid.style.display = "none";
+			selectid.style.display = "none";
 
-		addbutton.style.display = "inline";
+			addbutton.style.display = "inline";
 
-		updatebutton.style.display = "none";
+			updatebutton.style.display = "none";
 
-		document.getElementById("title").setAttribute("value", "");
-		document.getElementById("chapter").setAttribute("value", "");
-		document.getElementById("author").setAttribute("value", "");
-		tinyMCE.get("textpost").setContent("");
+			document.getElementById("title").setAttribute("value", "");
+			document.getElementById("chapter").setAttribute("value", "");
+			document.getElementById("author").setAttribute("value", "");
+			tinyMCE.get("textpost").setContent("");
+		
+		} else if (valeur === "choixmodifier") {
 
+			form.setAttribute("action" , "index.php?action=modifyPost");
 
-	} else if (valeur === "choixmodifier") {
+			selectid.style.display = "block";
 
-		form.setAttribute("action" , "index.php?action=modifyPost");
+			addbutton.style.display = "none";
 
-		selectid.style.display = "block";
-
-		addbutton.style.display = "none";
-
-		updatebutton.style.display = "inline";
-
-
-	}
-
-
-
+			updatebutton.style.display = "inline";
+		}
 }

@@ -5,40 +5,40 @@ require_once("model/manager.php");
 
 class PostManager extends Manager 
 {
+	
 	public function getlastPost() {
 
-	
-	$bdd =$this->dbconnect();
+		$bdd =$this->dbconnect();
 
-	$reponse = $bdd->query("SELECT * FROM posts ORDER BY ID DESC LIMIT 0,1");
+		$reponse = $bdd->query("SELECT * FROM posts ORDER BY ID DESC LIMIT 0,1");
 
-	return $reponse;
-}
+		return $reponse;
+	}
 
  	public function getPost($postID) {
 
-	$bdd =$this->dbconnect();
+		$bdd =$this->dbconnect();
 
-	$reponse = $bdd->prepare("SELECT * FROM posts WHERE ID = ? ");
+		$reponse = $bdd->prepare("SELECT * FROM posts WHERE ID = ? ");
 
-	$reponse->execute(array($postID));
+		$reponse->execute(array($postID));
 
-	$post = $reponse->fetch();
+		$post = $reponse->fetch();
 
-	$reponse->closeCursor();
+		$reponse->closeCursor();
 
-	return $post;
+		return $post;
 
-}
+	}
+	
 	public function getPosts() {
 
-	$bdd = $this->dbconnect();
+		$bdd = $this->dbconnect();
 
-	$chapters = $bdd->query("SELECT * FROM posts ORDER BY ID DESC LIMIT 0,3");
+		$chapters = $bdd->query("SELECT * FROM posts ORDER BY ID DESC LIMIT 0,3");
 
-	return $chapters;
-
-
+		return $chapters;
+	
 	}
 
 	public function countPosts() {
@@ -50,10 +50,7 @@ class PostManager extends Manager
 		return $count; 
 
 	}
-
-
-
-
+	
 	public function selectChapter() {
 
 		$bdd = $this->dbconnect();
@@ -75,8 +72,6 @@ class PostManager extends Manager
 		return $ID;
 
 	}
-
-
 }
 
 ?>

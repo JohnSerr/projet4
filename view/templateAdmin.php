@@ -13,15 +13,13 @@
 		content_css: "css/style.css",
 		height: 600,
 		toolbar: "newdocument, bold, italic, underline, strikethrough, alignleft, aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste, bullist, numlist, blockquote, undo, redo, removeformat"
-
-
-	})
+		})
 	</script>	
-
-
+	
 	<title><?= $title ?></title>
 
 </head>
+
 <body>
 
 		<?= $content ?>

@@ -31,6 +31,7 @@ body
 	color: white;
 }
 
+
 #header h1 a
 {
 	text-decoration: none;
@@ -50,16 +51,15 @@ body
 	top: 0;
 }
 
-#logo2
 
+#logo2
 {
 	top:0;
 	right:0;
 }
 
+
 /*menu*/
-
-
 nav ul 
 {
 	display: flex;
@@ -73,6 +73,7 @@ nav ul
 	padding-top: 16px;
 }
 
+
 nav ul li
 {
 	margin-right: 20px;
@@ -81,14 +82,15 @@ nav ul li
 	
 }
 
+
 ul li a 
 {
 	text-decoration: none;
 	color: white;
 }
 
-/*content*/
 
+/*content*/
 #bandeau
 {
 	background: url(../image/alaska.jpg) no-repeat ;
@@ -110,6 +112,7 @@ ul li a
 
 }
 
+
 #bienvenue
 {
 	margin-left: 30px;
@@ -117,23 +120,25 @@ ul li a
 	font-size: 1.5em;
 }
 
-#bienvenue h2
 
+#bienvenue h2
 {
 	margin-top: 0;
 
 }
 
-#signature
 
+#signature
 {
 	text-align: right;
 }
+
 
 #livre
 {
 	text-align: center;
 }
+
 
 #lastadd
 {
@@ -145,11 +150,13 @@ ul li a
 	font-size: 2.0em;
 }
 
+
 #lastpost
 {
 
 	background-color: white;
 }
+
 
 #lastpost h4
 {
@@ -159,13 +166,14 @@ ul li a
 	font-size: 1.5em;
 	color: white;
 	background-color: black;
-
 }
+
 
 #lastpost em
 {
 	text-align: center;
 }
+
 
 #lastpost p
 {
@@ -176,23 +184,22 @@ ul li a
 	font-size: 1.3em;
 }
 
+
 .postinfo
 {
 	text-align: center;
 	background-color: grey;
 }
 
+
 .postinfo a
 {
 	
 	color: blue;
-
 }
 
+
 /*footer*/
-
-
-
 #footer
 {
 	
@@ -201,10 +208,8 @@ ul li a
 	background-color: #4d94ff;
 	text-align: center;
 	font-size: 1.2em;
-	
-	
-
 }
+
 
 #footer p
 {
@@ -216,8 +221,6 @@ ul li a
 /* ----------------------------------------------------------------------------------------------------- postView.php --------------------------------------------------------------------------------------------------------------- */
 
 
-
-
 .post h4
 {
 	padding: 10px;
@@ -227,6 +230,7 @@ ul li a
 	color: white;
 	background-color: black;
 }
+
 
 .post p
 {
@@ -247,6 +251,7 @@ ul li a
 	font-size: 2.0em;
 }
 
+
 .bloc_com
 {
 	background-color: grey;
@@ -254,17 +259,17 @@ ul li a
 	padding: 10px;
 	font-size: 1.5em;
 	border-bottom: 1px solid white;
-
 }
 
-#signaler
 
+#signaler
 {
 	background-color: white;
 	color:blue;
 	border: none;
 	font-size: 0.5em;
 }
+
 
 #pseudonyme, #champ_com
 {
@@ -274,11 +279,13 @@ ul li a
 	font-weight: bold;
 }
 
+
 #comment
 {
 	width: 300px;
 	height: 300px;
 }
+
 
 #envoyer
 {
@@ -288,15 +295,10 @@ ul li a
 }
 
 
-
-
-
 /*------------------------------------------------------------------------------------------ contactView.php ------------------------------------------------------------------------------- */
 
 
-
 #contact
-
 {
 	width: 50%;
 	margin-left: 25%;
@@ -308,15 +310,18 @@ ul li a
 	border-radius: 5px;
 }
 
+
 #contact label
 {
 	font-weight: bolder;
 }
 
+
 #bloc_nom 
 {
 	margin-top: 10px;
 }
+
 
 #bloc_nom input, #bloc_mail input, #bloc_message textarea
 {
@@ -333,6 +338,7 @@ ul li a
 
 	height: 500px;
 }
+
 
 #bouton_contact input
 {
@@ -357,8 +363,8 @@ ul li a
 	color: black;
 	font-weight: bolder;
 	font-size: 1.5em;
-	
 }
+
 
 #selectchapters
 {
@@ -371,10 +377,7 @@ ul li a
 }
 
 
-
-
 /*------------------------------------------------------------- login.php --------------------------------------------------------------------------------------------------------------------------------------------*/
-
 
 
 
@@ -405,6 +408,7 @@ ul li a
 /*-------------------------------------------------------------------------- adminView.php --------------------------------------------------------------------------------------------------------------------------- */
 
 
+
 #CMchap
 {
 	text-align: center;
@@ -414,7 +418,6 @@ ul li a
 	padding: 20px 0 20px 0;
 	margin-top: 0;
 }
-
 
 
 #billet, #delpost
@@ -428,7 +431,6 @@ ul li a
 {
 	display: none;
 }
-
 
 
 #infobillet input, #fonction select, #infobillet select
@@ -445,10 +447,12 @@ ul li a
 	
 }
 
+
 #mceu_28-body /*menu tinyMCE*/
 {
 	overflow: auto;
 }
+
 
 #soumettre 
 {
@@ -473,10 +477,12 @@ ul li a
 	margin-bottom: 0px;
 }
 
+
 #delpost
 {
 	margin: 50px 0 50px 0;
 }
+
 
 #totalreportedcomments
 {
@@ -502,6 +508,7 @@ ul li a
 	margin-top: 0px;
 }
 
+
 #logoutform
 {
 	text-align: center;
@@ -511,11 +518,13 @@ ul li a
 
 @media all and (max-width: 780px) {
 
+	
 	#header h1
 	{
 		font-size: 1.5em;
 	}
 
+	
 	nav ul 
 	{
 		flex-direction: column;
@@ -529,10 +538,6 @@ ul li a
 		display: none;
 	}
 
-
-
-
-
 }
 
 
@@ -542,7 +547,5 @@ ul li a
 	{
 		display: none;
 	}
-
-
 
 }

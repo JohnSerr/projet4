@@ -41,11 +41,8 @@ require_once("model/adminManager.php");
 
 		header("Location: index.php?action=post&id=" . $_GET["id"] . "#" . "path" . $comID );
 }
-	
 
-
-	
-	/* ajoute un commentaire dans la bdd et l'affiche sur le poste concerné */
+/* ajoute un commentaire dans la bdd et l'affiche sur le poste concerné */
 
 	function addComment($postID, $author, $comment) {
 
@@ -54,20 +51,14 @@ require_once("model/adminManager.php");
 
 		$addCom = $com->postComment($postID, $author, $comment);
 
-		
-
-
-		if($addCom === false) {
-			die("Ajout impossible !");
-		} else {
+			if($addCom === false) {
+				
+				die("Ajout impossible !");
 			
-
-			header("Location: index.php?action=post&id=" . $postID);
-
-
-		}
-
-
+			} else {
+				
+				header("Location: index.php?action=post&id=" . $postID);
+			}
 }
 
 
@@ -77,9 +68,7 @@ require_once("model/adminManager.php");
 
 }
 
-
-
- 	/* ajoute le message envoyé à la bdd */
+/* ajoute le message envoyé à la bdd */
 
 	function sendMessage($nom,$mail,$message) {
 
@@ -87,15 +76,13 @@ require_once("model/adminManager.php");
 
 		$addnewmess = $mess->postMail($nom,$mail,$message);
 
-		if($addnewmess === false) {
+			if($addnewmess === false) {
 
-			die("impossible à envoyer");
-		}
-
-
+				die("impossible à envoyer");
+			}
 }
 
-	/*Affiche les 3 derniers chapitres sur la page*/
+/*Affiche les 3 derniers chapitres sur la page*/
 
 
 	function chapters() {
@@ -112,6 +99,7 @@ require_once("model/adminManager.php");
 		require("view/chapterView.php");
 
 }
+
 /* fonction de conversion d'un numéro de chapitre en ID de billet*/
 
 	function chapId($chapt) {
@@ -122,18 +110,14 @@ require_once("model/adminManager.php");
 
 		header("Location: index.php?action=post&id=" . $cToID["ID"]);
 
-	
-
-
-
 }
-	/*affiche le formualire de login*/
+
+/*affiche le formualire de login*/
 
 	function logform() {
 
 
 		require("view/logView.php");
-
 
 }
 
@@ -145,23 +129,22 @@ require_once("model/adminManager.php");
 
 		$log = $l->getLogin($pseudo);
 
-		if(!$log) {
+			if(!$log) {
 
-			echo "Erreur login/mdp";	
+				echo "Erreur login/mdp";	
 			
+			} else if (password_verify($_POST["password"], $log["pass"])) {
+				session_start();
 
-		} else if (password_verify($_POST["password"], $log["pass"])) {
-			session_start();
+				$_SESSION["logged"] = true;
 
-			$_SESSION["logged"] = true;
-
-			header("Location: index.php?action=admin");
+				header("Location: index.php?action=admin");
 		
-		} else {
+			} else {
 
-			echo "Erreur login/mdp";
-		}
-	
+				echo "Erreur login/mdp";
+			}
+		
 }	
 
 /* Affiche la page admin.php*/
@@ -180,7 +163,7 @@ require_once("model/adminManager.php");
 
 		require("view/adminView.php");
 
-	}
+}
 
 
 /*ajoute un chapitre dans la bdd*/
@@ -191,37 +174,37 @@ require_once("model/adminManager.php");
 
 
 		$post = $p->createPost($title, $chapt, $author, $textpost);
-	}
+}
 
 /*vérifie et empêche un doublon de chapitre*/
 
 	function isDoubChap($chapt) {
 
-	$cha = new AdminManager();
+		$cha = new AdminManager();
 
-	$doubChap = $cha->existedChap($chapt);
+		$doubChap = $cha->existedChap($chapt);
 
-	return $doubChap;
+		return $doubChap;
 	
-	}	
+}	
 
 /* fonction appeler par ajax pour récupérer les data d'autocomplete*/
 
 	function autocomplete($postID) {
 
 
-	 $p = new PostManager();
+	 	$p = new PostManager();
 
-	 $infopost = $p->getPost($postID);
+	 	$infopost = $p->getPost($postID);
 
-	 $infojson = json_encode($infopost, true);
+		 $infojson = json_encode($infopost, true);
 
-	 return $infojson;
+		 return $infojson;
 
-	}
+}
 
 
-	/*fonction pour modifier un billet*/
+/*fonction pour modifier un billet*/
 
 	function updateP($title, $chapt, $author, $textpost, $postID) {
 
@@ -231,9 +214,9 @@ require_once("model/adminManager.php");
 
 
 
-	}
+}
 
-	/*fonction pour supprimer un billet*/
+/*fonction pour supprimer un billet*/
 
 	function postToDelete($postID) {
 
@@ -243,12 +226,11 @@ require_once("model/adminManager.php");
 
 
 
-	}
+}
 
-	/*fonction pour ignorer un signalement de commentaire et remettre la valeur "signaled" de la table comments à 0 */
+/*fonction pour ignorer un signalement de commentaire et remettre la valeur "signaled" de la table comments à 0 */
 
 	function igReport($comID) {
-
 
 		$com = new AdminManager();
 
@@ -256,7 +238,7 @@ require_once("model/adminManager.php");
 
 		header("Location: index.php?action=admin#modo");
 
-	}
+}
 
 	function delCom($comID) {
 
@@ -266,7 +248,7 @@ require_once("model/adminManager.php");
 
 		header("Location: index.php?action=admin#modo");
 
-	}
+}
  
 
 ?>

@@ -7,45 +7,42 @@
 	  include("menu.php");
 ?>
 
-	<div id="bandeau"></div>
+<div id="bandeau"></div>
 
-	<div id="intro">
-	
-		<div id="bienvenue">
-			<h2>Bienvenue sur mon Blog !</h2>
+<div id="intro">
+	<div id="bienvenue">
+		<h2>Bienvenue sur mon Blog !</h2>
 		
-			<p>Je m'appelle Jean Forteroche !</p>
-			<p>Je m'apprête à vous faire partager mon prochain livre, pas à pas via ce site.</p>
-			<p><em>Billet simple pour l'Alaska</em> est son titre.</p>
-			<p>Veinard que vous êtes ! Profitez en bien !</p>
-			<p id="signature">Jean FORTEROCHE</p>
-		</div>
-
-
-		<div id="livre">
-			<img src="image/livre.jpg" alt="livre">
-		</div>
-
+		<p>Je m'appelle Jean Forteroche !</p>
+		<p>Je m'apprête à vous faire partager mon prochain livre, pas à pas via ce site.</p>
+		<p><em>Billet simple pour l'Alaska</em> est son titre.</p>
+		<p>Veinard que vous êtes ! Profitez en bien !</p>
+		<p id="signature">Jean FORTEROCHE</p>
 	</div>
 
-		<?php 
+	<div id="livre">
+		<img src="image/livre.jpg" alt="livre">
+	</div>
 
-		$data = $rep->fetch()
+</div>
 
-		?>
-		<h3 id="lastadd">Dernier ajout</h3>
-		<div id="lastpost">
-			<h4><?php echo htmlspecialchars($data["title"]); ?></h4>
-			<p><?php echo $data["textpost"]; ?></p>
-			<br>
-			<div class="postinfo">
-				<em><?php echo "Ajouté le : " . $data["time"] . " par " . htmlspecialchars($data["author"]) . " " . "#" . $data["ID"]; ?></em>
-				<br>
-				<em><a href="index.php?action=post&amp;id=<?php echo $data["ID"]; ?>">Commentaires</a></em>
-			</div>
-		</div>
+<?php $data = $rep->fetch() ?>
 		
-		<?php $rep->closeCursor(); ?>
+<h3 id="lastadd">Dernier ajout</h3>
+	
+<div id="lastpost">
+	<h4><?php echo htmlspecialchars($data["title"]); ?></h4>
+	<p><?php echo $data["textpost"]; ?></p>
+	<br>
+		
+	<div class="postinfo">
+		<em><?php echo "Ajouté le : " . $data["time"] . " par " . htmlspecialchars($data["author"]) . " " . "#" . $data["ID"]; ?></em>
+		<br>
+		<em><a href="index.php?action=post&amp;id=<?php echo $data["ID"]; ?>">Commentaires</a></em>
+	</div>
+</div>
+		
+<?php $rep->closeCursor(); ?>
 
 <?php include("footer.php"); ?>
 

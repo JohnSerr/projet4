@@ -5,8 +5,7 @@ require_once("model/manager.php");
 class AdminManager extends Manager {
 
 	public function getLogin($pseudo) {
-
-
+		
 		$bdd = $this->dbconnect();
 
 		$logs = $bdd->prepare("SELECT pseudo, pass FROM admin WHERE pseudo = :pseudo");
@@ -28,7 +27,6 @@ class AdminManager extends Manager {
 
 	}
 
-
 	public function updatePost($title, $chapt, $author, $textpost, $postID) {
 
 		$bdd = $this->dbconnect();
@@ -41,26 +39,17 @@ class AdminManager extends Manager {
 			":author" => $author,
 			":textpost" => $textpost,
 			));
-
-
-
 	}
 
 	public function deletePost($postID) {
 
-
 		$bdd = $this->dbconnect();
-
 
 		$nextdelpost = $bdd->prepare("DELETE FROM posts WHERE ID = :ID");
 
 		$deletedpost = $nextdelpost->execute(array(":ID" => $postID));
-
-
-
+	
 	}
-
-
 
 	public function existedChap ($chapter) {
 
@@ -96,10 +85,6 @@ class AdminManager extends Manager {
 		return $totalreported;
 	}
 
-
-
-
-
 	public function getReportedCom() {
 
 
@@ -108,8 +93,7 @@ class AdminManager extends Manager {
 		$reportedcoms = $bdd->query("SELECT * FROM comments WHERE signaled = 1");
 
 		return $reportedcoms;
-
-
+	
 	}
 
 	public function ignoreReport($comID) {
@@ -131,6 +115,5 @@ class AdminManager extends Manager {
 		$deletedcom = $nextdelpost->execute(array(":ID" => $comID));
 
 	}
-
 
 }
