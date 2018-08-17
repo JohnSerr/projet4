@@ -244,7 +244,7 @@ require_once("model/adminManager.php");
 
 		$com = new AdminManager();
 
-		$deletecom = $com->ignoreReport($comID);
+		$deletecom = $com->deleteComment($comID);
 
 		header("Location: index.php?action=admin#modo");
 

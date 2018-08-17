@@ -112,7 +112,7 @@ class AdminManager extends Manager {
 
 		$nextdelcom = $bdd->prepare("DELETE FROM comments WHERE ID = :ID");
 
-		$deletedcom = $nextdelpost->execute(array(":ID" => $comID));
+		$deletedcom = $nextdelcom->execute(array(":ID" => $comID));
 
 	}
 

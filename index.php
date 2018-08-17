@@ -154,7 +154,9 @@ if (isset($_GET["action"])) {
 	} else if ($_GET["action"] === "deletepost") {
 		if (isset($_POST["deletenumber"]) && $_POST["deletenumber"] > 0) {
 
-			postToDelete($_POST["deletenumber"]);	
+			postToDelete($_POST["deletenumber"]);
+			echo "Chapitre supprimé ! <br>";
+			echo "<a href=\"index.php?action=admin\">Revenir à l'administration</a>";	
 
 		} else {
 
@@ -176,7 +178,7 @@ if (isset($_GET["action"])) {
 	 	if(isset($_POST["comID"]) && $_POST["comID"] > 0) {
 
 	 		delCom($_POST["comID"]);
-	 		echo "Chapitre supprimé ! <br>";
+	 		echo "Commentaire supprimé ! <br>";
 			echo "<a href=\"index.php?action=admin\">Revenir à l'administration</a>";
 
 
